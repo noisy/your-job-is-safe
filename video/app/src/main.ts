@@ -17,7 +17,10 @@ const canvas = document.createElement('canvas');
 canvas.id = 'c'; // render.ts's sheet mode draws from #c
 canvas.width = PW;
 canvas.height = PH;
-const engine = new Engine(canvas, STYLE ? styleTimeline(STYLE) : makeTimeline);
+const THUMB = params.get('thumb');
+// ?thumb=N: one of the composed YouTube thumbnails (src/scenes/thumb.ts), a single still scene
+const thumbTimeline = () => [{ id: 'thumb', load: () => import('./scenes/thumb'), start: 0, end: 10, params: { n: Number(THUMB) } }];
+const engine = new Engine(canvas, THUMB ? thumbTimeline : STYLE ? styleTimeline(STYLE) : makeTimeline);
 
 declare global {
   interface Window { __yjis: any }

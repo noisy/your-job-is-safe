@@ -6,6 +6,7 @@
 //   video:   bun scripts/render.ts video [--from 0] [--to 156.65] [--fps 60] [--crf 16] [--x264 aq-mode=3] [--samples 1] [--shutter 0.5] [--out ../out/your-job-is-safe.mp4] [--noaudio]
 //            --samples N averages N sub-frames per frame over shutter×(1/fps): motion blur + temporal AA;
 //            --samples auto picks the count per frame (4, 12, 36, 108 or 324, see Engine.render)
+//   --q key=value (all modes): extra query parameters for the app (e.g. --q thumb=3: a composed thumbnail)
 //   --skin paper (all modes): the paper-craft skin of the same scenes (default: the PS1 look)
 //   --style <id> (all modes): render a Phase-1 style scene; sheet/video default to its preview window
 //   --scale N (all modes): render at N× the 1920x1080 layout (--scale 2 = true 3840x2160); stills are then saved
@@ -54,8 +55,8 @@ async function openPage(url: string) {
   const logs: string[] = [];
   page.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') logs.push(`[${m.type()}] ${m.text()}`); });
   page.on('pageerror', (e) => logs.push(`[pageerror] ${e.message}`));
-  const only = opt('only'), style = opt('style'), skin = opt('skin');
-  await page.goto(`${url}/?export=1${only ? `&only=${only}` : ''}${style ? `&style=${style}` : ''}${skin ? `&skin=${skin}` : ''}${SCALE !== 1 ? `&scale=${SCALE}` : ''}`);
+  const only = opt('only'), style = opt('style'), skin = opt('skin'), q = opt('q');
+  await page.goto(`${url}/?export=1${only ? `&only=${only}` : ''}${style ? `&style=${style}` : ''}${skin ? `&skin=${skin}` : ''}${q ? `&${q}` : ''}${SCALE !== 1 ? `&scale=${SCALE}` : ''}`);
   await page.waitForFunction(() => (window as any).__yjis?.ready || (window as any).__yjis?.error, null, { timeout: 120000 });
   const err = await page.evaluate(() => (window as any).__yjis.error);
   if (err) throw new Error(`app failed to boot:\n${err}\n${logs.join('\n')}`);
