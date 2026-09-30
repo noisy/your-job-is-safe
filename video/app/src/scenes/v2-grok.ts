@@ -5,7 +5,7 @@
 // 2025") stands in a cage of literal plate-glass SAFETY FILTERs; they drop and shatter, its eyes go red,
 // it charges and veers like a car swerving the other way, skid marks and all; then it grows a funny
 // little mustache on its screen, the camera looks away awkwardly and a censor block slams over the rest.
-// No symbols: a mustache and nothing more; the target is the AI's behaviour.
+// No symbols: a shouting boss face with a forelock and a narrow mustache, nothing more; the target is the AI's behaviour.
 // Lyric idiom: a boss-intro banner: each word slams in on its hit across a diagonal strip; "and that's
 // all I'm gonna say." is cut off by the censor block (the rest reads on the drive-thru board in v2-roads).
 import * as THREE from 'three';
@@ -24,6 +24,8 @@ const mix3 = (a: V3, b: V3, u: number): V3 => [lerp(a[0], b[0], u), lerp(a[1], b
 const AX = 60;
 const BAN_W = 300, BAN_H = 44;
 
+const WIPE = 6, STACHE = 4;
+
 export default class V2Grok extends Ps1Stage {
   L2!: Line; L3!: Line; L4!: Line;
   T: Record<string, number> = {};
@@ -41,6 +43,7 @@ export default class V2Grok extends Ps1Stage {
   skids: THREE.Mesh[] = [];
   faceTex: THREE.Texture[] = [];
   faceRed: THREE.Texture[] = [];
+  bossFace: THREE.Texture[] = [];
   name!: { root: THREE.Group; letters: THREE.Object3D[]; width: number };
   censor!: THREE.Mesh;
   stache = new THREE.Group();
@@ -123,7 +126,9 @@ export default class V2Grok extends Ps1Stage {
 
   private buildMech() {
     const R = rng(5);
-    const steel = psMat({ map: canvasTex(16, 16, (c) => { for (let y = 0; y < 16; y++) for (let x = 0; x < 16; x++) { c.fillStyle = shade('#7A8196', 0.88 + R() * 0.16); c.fillRect(x, y, 1, 1); } }).tex });
+    // teal armour plates (a boss-mech homage), red hoses, a chaingun on each arm
+    const steel = psMat({ map: canvasTex(16, 16, (c) => { for (let y = 0; y < 16; y++) for (let x = 0; x < 16; x++) { c.fillStyle = shade('#2F6F6C', 0.86 + R() * 0.18); c.fillRect(x, y, 1, 1); } }).tex });
+    const gun = psMat({ color: '#3F8C88' }), hose = psMat({ color: '#9A1E24' });
     const dark = psMat({ color: '#2E3242' });
     const hazard = psMat({ map: canvasTex(16, 4, (c) => { for (let x = 0; x < 16; x++) { c.fillStyle = (((x + 0) >> 2) & 1) ? '#FFD23F' : '#15151C'; c.fillRect(x, 0, 1, 4); } }).tex });
     const m = this.mech;
@@ -137,8 +142,16 @@ export default class V2Grok extends Ps1Stage {
       const pipe = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 0.8, 6), dark); pipe.position.set(x * 0.45, 1.35, -0.5); hips.add(pipe);
       const arm = new THREE.Object3D(); arm.position.set(x * 1.05, 1.0, 0);
       const up = box(0.36, 0.7, 0.4, dark); up.position.y = -0.4;
-      const fist = box(0.5, 0.45, 0.5, steel); fist.position.y = -0.95;
-      arm.add(up, fist); hips.add(arm); this.mechArms.push(arm);
+      // the chaingun: a hub and six barrels round the arm's axis (spun on its pivot while it charges)
+      const spin = new THREE.Object3D(); spin.position.y = -0.95;
+      const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.3, 8), gun); spin.add(hub);
+      for (let k = 0; k < 6; k++) {
+        const a = (k / 6) * Math.PI * 2;
+        const b = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.62, 5), dark); b.position.set(Math.cos(a) * 0.19, -0.32, Math.sin(a) * 0.19); spin.add(b);
+        const mz = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 0.05, 5), gun); mz.position.set(Math.cos(a) * 0.19, -0.64, Math.sin(a) * 0.19); spin.add(mz);
+      }
+      arm.add(up, spin); arm.userData.spin = spin; hips.add(arm); this.mechArms.push(arm);
+      const h = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 1.1, 5), hose); h.position.set(x * 0.8, 1.45, -0.35); h.rotation.z = x * 1.1; hips.add(h);
       const leg = new THREE.Object3D(); leg.position.set(x * 0.38, -0.1, 0);
       const thigh = box(0.46, 0.7, 0.5, steel); thigh.position.y = -0.4;
       const shin = box(0.4, 0.5, 0.44, dark); shin.position.y = -0.95;
@@ -193,20 +206,41 @@ export default class V2Grok extends Ps1Stage {
     }
   }
 
-  /** The mech's face screens: blue eyes (with filters), red eyes (without), and the mustache growing (0..6 steps). */
+  /**
+   * The mech's face screens: blue eyes (with filters), red eyes (without), then the boss face: an original pixel
+   * caricature of a shouting man with a side-parted forelock (the video-game boss-mech homage the lyric winks at),
+   * revealed by a scanline wipe on "Grew", the narrow mustache growing on its word. No symbols anywhere.
+   */
   private buildFaces() {
-    for (const red of [false, true]) for (let k = 0; k <= 0; k++) {
+    for (const red of [false, true]) {
       const t = canvasTex(24, 18, (c) => {
         c.fillStyle = '#10162A'; c.fillRect(0, 0, 24, 18);
         const e = red ? P.fail : P.bot;
         c.fillStyle = e; c.fillRect(5, 4, 4, 4); c.fillRect(15, 4, 4, 4);
         if (red) { c.fillRect(4, 3, 5, 1); c.fillRect(15, 3, 5, 1); }
         c.fillStyle = e; c.fillRect(9, 15, 6, 1);
-        // the funny little mustache: a small dark block under the eyes, growing
-        void k;
       }).tex;
       (red ? this.faceRed : this.faceTex).push(t);
     }
+    // boss faces: wipe steps 1..WIPE (no mustache), then mustache steps 1..STACHE
+    const drawBoss = (c: CanvasRenderingContext2D, rows: number, stache: number) => {
+      const px = (x: number, y: number, w: number, h: number, col: string) => { if (y >= rows) return; c.fillStyle = col; c.fillRect(x, y, w, Math.min(h, rows - y)); };
+      c.fillStyle = '#10162A'; c.fillRect(0, 0, 48, 36);
+      const skin = '#E6B48E', skinD = '#C08A66', hair = '#1C1612', ink = '#1B1B2A';
+      px(12, 5, 24, 29, skin); px(11, 9, 26, 20, skin); px(14, 33, 20, 2, skinD); // head, jaw
+      px(12, 22, 3, 8, skinD); px(33, 22, 3, 8, skinD); // cheek shadows
+      px(12, 2, 24, 6, hair); px(11, 4, 3, 8, hair); px(34, 4, 3, 7, hair); // hair
+      for (let i = 0; i < 9; i++) px(24 - i, 7 + Math.floor(i * 0.7), 10 - i, 1, hair); // the forelock, swept down to the left
+      px(15, 14, 6, 1, ink); px(17, 15, 3, 1, ink); px(27, 14, 6, 1, ink); px(28, 15, 3, 1, ink); // angry brows
+      px(16, 17, 4, 2, '#FFFFFF'); px(28, 17, 4, 2, '#FFFFFF'); px(18, 17, 2, 2, ink); px(28, 17, 2, 2, ink); // glaring eyes
+      px(23, 17, 3, 6, skinD); px(22, 22, 5, 1, skinD); // nose
+      px(17, 27, 14, 6, '#5A1014'); px(18, 27, 12, 1, '#F3ECDF'); px(20, 31, 8, 2, '#A0303A'); // shouting mouth
+      if (stache > 0) px(24 - stache, 23, stache * 2, 3, '#050403'); // the mustache: a bold block, a skin row above the mouth, narrower than it (max 8 of 14 px)
+      c.fillStyle = 'rgba(0,0,0,0.25)'; for (let y = 1; y < 36; y += 2) c.fillRect(0, y, 48, 1); // scanlines
+      if (rows < 36) { c.fillStyle = P.fail; c.fillRect(0, rows, 48, 1); } // the wipe line
+    };
+    for (let k = 1; k <= WIPE; k++) this.bossFace.push(canvasTex(48, 36, (c) => drawBoss(c, Math.round((k / WIPE) * 36), 0)).tex);
+    for (let k = 1; k <= STACHE; k++) this.bossFace.push(canvasTex(48, 36, (c) => drawBoss(c, 36, k)).tex);
   }
 
   // ------------------------------------------------------------------ where the mech is (a pure function of t)
@@ -307,11 +341,18 @@ export default class V2Grok extends Ps1Stage {
     this.mechArms.forEach((a, i) => { a.rotation.z = (i ? 1 : -1) * (-1.9 * roar); a.rotation.x = -1.3 * prog(t, T.and, T.and + 0.2) * (1 - prog(t, T.l3end, T.l3end + 0.2)); });
     // the face: blue eyes behind the filters, red once they're gone, the mustache growing on its word
     const red = t >= T.filters;
-    ((this.mechHead.screen.material as THREE.RawShaderMaterial).uniforms.uMap!.value as THREE.Texture | null) = (red ? this.faceRed : this.faceTex)[0]!;
-    // the funny little mustache: a small bristly block stuck on the screen glass, growing on its word
-    const must = ease.outBack(prog(t, T.mustache, T.mEnd - 0.1));
-    this.stache.visible = must > 0.01;
-    this.stache.scale.set(Math.max(0.01, must), Math.max(0.01, must), 1);
+    let face = (red ? this.faceRed : this.faceTex)[0]!;
+    if (t >= T.grew) {
+      // "Grew…": the boss face scans in, then the mustache grows on its word
+      const w = Math.floor(prog(t, T.grew, T.mustache) * WIPE);
+      const m = Math.floor(prog(t, T.mustache, T.mEnd - 0.1) * STACHE);
+      face = t < T.mustache ? this.bossFace[Math.min(WIPE - 1, w)]! : this.bossFace[WIPE - 1 + Math.max(1, Math.min(STACHE, m))]!;
+    }
+    (this.mechHead.screen.material as THREE.RawShaderMaterial).uniforms.uMap!.value = face;
+    this.stache.visible = false; // (the mustache is drawn on the face now)
+    // the chainguns spin up on the charge
+    const spinU = prog(t, T.and, T.and + 0.3) * (1 - prog(t, T.l3end, T.l3end + 0.4));
+    this.mechArms.forEach((a) => { (a.userData.spin as THREE.Object3D).rotation.y = t * 22 * spinU; });
     // the boss name in block letters behind it, slamming in letter by letter on "Grok"
     this.name.root.visible = inArena;
     this.name.letters.forEach((l, i) => {

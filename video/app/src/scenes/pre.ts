@@ -19,7 +19,7 @@ import { CARD_W, CARD_H, drawWordCard, drawDecorCard, drawTailCard, drawPlaque, 
 
 const FX = -40; // the feed set
 const CW = 1.8, CH = CW * (CARD_H / CARD_W);
-const PLAQ: V3 = [-1.32, 1.55, -4.15];
+const PLAQ: V3 = [-0.4, 1.78, -4.15]; // (right of the window frame, above the monitor)
 const PLAQ_W = 192, PLAQ_H = 112, PLAQ_WW = 1.45;
 const MACH: V3 = [-3.45, 0, -3.2];
 const HYPE = /hype|genius|smart|tweet|tiktok|trend/i;

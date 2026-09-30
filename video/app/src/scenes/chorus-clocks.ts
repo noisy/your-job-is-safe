@@ -415,7 +415,7 @@ export default class ChorusClocks extends Ps1Stage {
       const tick0 = this.L1.words[0]!.start;
       const ticks = t > tick0 ? Math.floor(this.ctx.audio.beatAt(t) - this.ctx.audio.beatAt(tick0)) + ease.outExpo(clamp((this.ctx.audio.beatAt(t) % 1) / 0.25)) : 0;
       const sweep = t > this.L2.words[0]!.start ? Math.pow(prog(t, this.L2.words[0]!.start, this.L2.words[4]!.start), 2) * 7 : 0;
-      this.setTime(this.big, 10, 10 + ticks * 0.2 - sweep * 60 * 0.08, 30 + ticks * 6 - sweep * 60);
+      this.setTime(this.big, 10, 10 + ticks * 0.2 + sweep * 60 * 0.08, 30 + ticks * 6 + sweep * 60); // (racing forward, into the future)
       this.drips.forEach((m, i) => {
         const x = [-1.1, -0.3, 0.6, 1.3, 1.9][i]!, y0 = Math.sqrt(GR * GR - x * x) * 0.96;
         const len = 0.3 + prog(t, d[0]! - 0.3 + i * 0.12, d[1]! + 0.6 + i * 0.1, ease.outQuad) * (0.8 + (i % 3) * 0.45);
@@ -435,7 +435,7 @@ export default class ChorusClocks extends Ps1Stage {
         const hh = (i * 7) % 12, mm = (i * 23) % 60;
         const s = on ? (beat - this.ctx.audio.beatAt(this.L1.words[1]!.start)) * 6 : 0;
         const sweep = t > this.L2.words[0]!.start ? Math.pow(prog(t, this.L2.words[0]!.start, this.L2.words[4]!.start), 2) * 2 * (1 + (i % 3)) : 0;
-        this.setTime(c, on ? hh : 10, (on ? mm : 10) + s / 60 - sweep * 60, 30 + s - sweep * 360);
+        this.setTime(c, on ? hh : 10, (on ? mm : 10) + s / 60 + sweep * 60, 30 + s + sweep * 360);
       } else if (this.v === 2 && i === this.twitchClock) {
         const bt = Math.floor(beat);
         this.setTime(c, 10, 10, 30 + (bt % 4 === 2 ? 6 * ease.outExpo(clamp((beat % 1) / 0.12)) : 0) + Math.floor(bt / 4) * 0);
@@ -444,7 +444,7 @@ export default class ChorusClocks extends Ps1Stage {
     this.rowClocks.forEach((c, i) => {
       if (fin && t > this.L2.words[0]!.start) {
         const spin = Math.pow(prog(t, this.L2.words[0]!.start, this.L2.words[4]!.start + 0.4), 1.5);
-        this.setTime(c, 10, 10 - spin * 180 * (1 + i * 0.2), 30 - spin * 3000);
+        this.setTime(c, 10, 10 + spin * 180 * (1 + i * 0.2), 30 + spin * 3000);
       } else this.setTime(c, 10, 10, 30);
       // the clock of the word being sung pops forward
       const w = this.rowWords[i]!.w;
