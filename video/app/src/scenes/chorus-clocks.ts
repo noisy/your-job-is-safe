@@ -90,7 +90,7 @@ export default class ChorusClocks extends Ps1Stage {
     this.world.add(this.big.root);
     this.setTime(this.big, 10, 10, 30);
     const slots = fin ? [7, 8, 9, 10, 12] : [7, 8, 9, 10, 12, 2];
-    this.L1.words.forEach((w, i) => { if (slots[i]) this.bigWords.push(this.litWord(w, this.big.root, this.slotPos(slots[i]!, textW(w.w, 2) + 8), WORD_TEXEL, 0.05)); });
+    this.L1.words.forEach((w, i) => { if (slots[i]) this.bigWords.push(this.litWord(w, this.big.root, this.slotPos(slots[i]!, textW(w.w, 2) + 8), WORD_TEXEL, 0.2)); }); // (in front of the rim, which sticks out of the face)
     // the wall of clocks and the shop sign
     const wall = makeClockWall([[-3.0, 0.3, 3.0, 6.3], [2.2, 0, 9.6, 4.5]]);
     this.wall = wall.clocks; this.world.add(wall.root);
@@ -426,7 +426,7 @@ export default class ChorusClocks extends Ps1Stage {
       this.setTime(this.big, 10, 10, 30);
     }
     // words on the numerals
-    this.showWords(this.bigWords, t, this.big.numerals, this.v === 'final' ? [7, 8, 9, 10, 12] : [7, 8, 9, 10, 12, 2], 1.3, 0.12, this.v === 2 ? 'flip' : 'pop');
+    this.showWords(this.bigWords, t, this.big.numerals, this.v === 'final' ? [7, 8, 9, 10, 12] : [7, 8, 9, 10, 12, 2], 1.3, 0.16, this.v === 2 ? 'flip' : 'pop');
     this.showWords(this.rowWords, t, null, null, 1.3, 0.22, this.v === 2 ? 'spin' : 'pop');
     // wall clocks: 10:10 (v2: one second hand twitches); the final chorus: every clock ticks its own (right) time
     this.wall.forEach((c, i) => {

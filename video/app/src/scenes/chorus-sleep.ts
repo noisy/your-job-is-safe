@@ -268,8 +268,9 @@ export default class ChorusSleep extends Ps1Stage {
       if (t < keep.start + 0.05) return { ...mix(plq(0.95, 0.1), wide, prog(t, d[1]!, d[1]! + 0.35, ease.outExpo)), roll: 0.02, fov: 52 };
       // outside the box (its inside is never shown): the front, with the plaque sticking out of it, then a push
       // into the cardboard face as the light goes (plumber opens on its cabinet doors)
-      const front = { P: [BOXP[0] + 0.3, BOXP[1] + 0.55, BOXP[2] + 1.15] as V3, T: [BOXP[0], BOXP[1] + 0.5, BOXP[2]] as V3 };
-      const close = { P: [BOXP[0] + 0.15, BOXP[1] + 0.58, BOXP[2] + 0.95] as V3, T: [BOXP[0], BOXP[1] + 0.52, BOXP[2]] as V3 };
+      // from in front and a little above: the angled plaque reads almost face-on and hides the inside
+      const front = { P: [BOXP[0] + 0.35, BOXP[1] + 1.2, BOXP[2] + 1.25] as V3, T: [BOXP[0], BOXP[1] + 0.5, BOXP[2]] as V3 };
+      const close = { P: [BOXP[0] + 0.22, BOXP[1] + 1.05, BOXP[2] + 0.95] as V3, T: [BOXP[0] + 0.02, BOXP[1] + 0.52, BOXP[2] - 0.04] as V3 };
       const m = mix(mix(wide, front, prog(t, keep.start - 0.08, keep.start + 0.12, ease.inOutCubic)), close, prog(t, keep.start + 0.12, this.ctx.end, ease.outCubic));
       return { ...m, roll: 0, fov: 52 };
     }
@@ -533,10 +534,11 @@ export default class ChorusSleep extends Ps1Stage {
     const w = this.L3.words, keep = w[w.length - 1]!;
     const fly = fin ? prog(t, keep.start - 0.05, keep.start + 0.15, ease.inOutQuad) : 0;
     const arc = Math.sin(Math.PI * fly) * 0.6;
-    // (final) it lands upright in the small box, its lower part inside, the rest sticking out over the rim
-    const outY = BOXP[1] + BOX_H + PLAQ_H * this.ptx * 0.44; // only its bottom edge inside: "keep..." stays readable
-    pm.position.set(lerp(PLQ[0], BOXP[0], fly), lerp(PLQ[1], outY, fly) + arc, lerp(PLQ[2], BOXP[2] + 0.05, fly));
-    pm.rotation.set(lerp(PLQ_TILT, -0.12, fly), lerp(0.08, 0.2, fly), lerp(0, 0.05, fly));
+    // (final) it lands at an angle, partly in the small box: its lower edge drops in behind the front wall, it
+    // leans back over the back rim (it is wider than the box, so it covers the opening), twisted a little
+    const outY = BOXP[1] + BOX_H + 0.04;
+    pm.position.set(lerp(PLQ[0], BOXP[0] + 0.04, fly), lerp(PLQ[1], outY, fly) + arc, lerp(PLQ[2], BOXP[2] - 0.06, fly));
+    pm.rotation.set(lerp(PLQ_TILT, -0.78, fly), lerp(0.08, 0.14, fly), lerp(0, 0.2, fly));
     pm.scale.set(PLAQ_W * this.ptx, PLAQ_H * this.ptx, 1);
     // content
     let key = '';
