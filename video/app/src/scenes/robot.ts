@@ -125,7 +125,8 @@ export default class Robot extends Ps1Stage {
       // third person, side on: the robot walks in and knocks DEV over
       return { P: kv([[d4, [2.2, 1.45, 2.9]], [d5, [1.9, 1.35, 2.6], ease.inOutCubic]]), T: kv([[d4, [3.0, 1.2, -0.8]], [d5, [2.5, 0.9, -0.6], ease.inOutCubic]]), roll: 0.03 * Math.sin((t - d4) * 3), fov: 58 };
     }
-    if (t < d6) return this.pov(t, [2.4, 1.85, -1.0], [0.4, 1.85, -1.3], [0, 1.3, -2.6], d5, d6, 0.9);
+    // (it stops short of the sink and looks a little down, so the objective banner at the top clears the SINK tag)
+    if (t < d6) return this.pov(t, [2.4, 1.85, -1.0], [0.9, 1.8, -0.35], [0, 1.1, -2.6], d5, d6, 0.9);
     const cs = this.cardStart();
     if (t < cs) {
       // wide, low, from behind DEV on the floor: the robot fixing the sink; GAME OVER slams in front of it
@@ -138,18 +139,23 @@ export default class Robot extends Ps1Stage {
     void d8;
   }
 
-  /** The credits start: GAME OVER holds until the next downbeat a second or more after the hit, then the card. */
-  private cardStart() { return this.d[7]!; }
+  /** The credits start: GAME OVER holds until just before the next downbeat a second or more after the hit (the first credit line lands on it). */
+  private cardStart() { return this.d[7]! - 0.25; }
 
-  /** The credit list's line times (one every two beats from the card's first beat), TASK COMPLETE, and the title. */
+  /**
+   * The credits on the guitar outro's downbeats: one line per downbeat from the card's start, TASK COMPLETE on
+   * the next downbeat, the title on the one after, and the asterisk (and "*for now") three beats later, on the
+   * outro's last big hit.
+   */
   private creditTimes() {
     const au = this.ctx.audio, end = this.d[this.d.length - 1]!;
-    const b0 = Math.round(au.beatAt(this.cardStart())) + 1;
-    const lines = Array.from({ length: CREDITS.length }, (_, i) => au.timeOfBeat(b0 + 2 * i));
-    const dbAfter = (x: number) => au.downbeats.find((y) => y >= x - 0.02) ?? x;
-    const done = Math.min(dbAfter(lines[lines.length - 1]! + 0.6), end - 5);
-    const title = Math.min(dbAfter(done + 2.4), end - 2.2);
-    return { lines, done, title };
+    const dbs = au.downbeats.filter((y) => y >= this.d[7]! - 0.02);
+    const at = (i: number) => dbs[i] ?? this.cardStart() + 1.39 * i;
+    const lines = CREDITS.map((_, i) => at(i));
+    const done = Math.min(at(CREDITS.length), end - 3.2);
+    const title = Math.min(at(CREDITS.length + 1), end - 2.0);
+    const star = Math.min(au.timeOfBeat(au.beatAt(title) + 3), end - 0.8);
+    return { lines, done, title, star };
   }
 
   /** The robot's POV: walking from a to b (with a step bob) while looking toward `look`, a turn of the head at `turn` (0..1 of the shot). */
@@ -415,7 +421,7 @@ export default class Robot extends Ps1Stage {
    */
   private animEnd(t: number) {
     const end = this.d[this.d.length - 1]!;
-    const { lines, done, title: tTitle } = this.creditTimes();
+    const { lines, done, title: tTitle, star: tStar } = this.creditTimes();
     // the HUD frame stays on (the robot is still looking)
     this.drawHUD(t, 'done');
     const cs = this.cardStart();
@@ -425,14 +431,13 @@ export default class Robot extends Ps1Stage {
     tk.open = clamp((t - cs) / 0.12) * (1 - clamp((t - tTitle) / 0.12));
     tk.draw(`${shown}`, (c) => {
       uiBox(c, 0, 0, 300, 124);
-      pixText(c, 'CREDITS', 10, 7, P.uiDim, 2, { shadow: P.uiEdge });
-      let y = 32;
+      let y = 16;
       CREDITS.forEach(([k, v], i) => {
         const on = i < shown;
         pixText(c, on ? '✓' : '·', 10, y, on ? P.fix : P.uiDim, 1, { shadow: P.uiEdge });
         pixText(c, k, 22, y, on ? P.key2 : P.uiDim, 1, { shadow: P.uiEdge });
         if (on) pixText(c, v, 76, y, P.uiLine, 1, { shadow: P.uiEdge });
-        y += 14;
+        y += 16;
       });
     });
     // TASK COMPLETE: big green block letters under the finished list, slamming in letter by letter on the downbeat
@@ -481,7 +486,7 @@ export default class Robot extends Ps1Stage {
       });
       // the asterisk: small, up at the end of the title, landing last
       const st = this.star;
-      const tS = tTitle + ti.letters.length * 0.03 + 0.12;
+      const tS = tStar;
       st.root.visible = t >= tS;
       st.root.quaternion.copy(q); st.root.scale.setScalar(sc * 0.9);
       st.root.position.copy(ti.root.position).addScaledVector(rgt, ti.width * sc * 0.5 + 0.45 * sc).addScaledVector(upv, 0.6 * sc);

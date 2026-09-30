@@ -34,6 +34,7 @@ const PLQ: V3 = [-0.92, 1.0, -2.86]; // the plaque's centre on the desk
 const PLQ_TX = 0.0068; // world units per plaque texel
 const PLQ_TILT = -0.35;
 const BOXP: V3 = [-2.8, 0.56, -2.3]; // the cardboard box, on the foot of the bed (final)
+const BOX_W = 0.95, BOX_H = 0.5, BOX_D = 0.62;
 const CH_TX = 0.068; // dream letters
 const BLK = 0.24, BLK_PITCH = 0.27, SPACE = 0.2;
 
@@ -148,11 +149,11 @@ export default class ChorusSleep extends Ps1Stage {
       this.bot = { body, head };
       // DEV's chair is already gone
       for (const k of this.room.root.children) if (Math.abs(k.position.x) < 0.3 && k.position.z > -2.45 && k.position.z < -2.0 && k.position.y < 1.2) k.visible = false;
-      this.cbox.add(makeCardboardBox(1.5, 0.9, 1.0));
+      this.cbox.add(makeCardboardBox(BOX_W, BOX_H, BOX_D)); // small: the plaque sticks out of it (the inside is never shown)
       const fm = psMat({ color: '#B8864E', side: THREE.DoubleSide });
-      for (const [x, z, ry, w] of [[0, 0.5, 0, 1.5], [0, -0.5, Math.PI, 1.5], [0.75, 0, Math.PI / 2, 1.0], [-0.75, 0, -Math.PI / 2, 1.0]] as const) {
-        const piv = new THREE.Object3D(); piv.position.set(x, 0.9, z); piv.rotation.order = 'YXZ'; piv.rotation.y = ry; // fold about the flap's own edge
-        const f = new THREE.Mesh(new THREE.PlaneGeometry(w, 0.5), fm); f.position.set(0, 0.25, 0); piv.add(f);
+      for (const [x, z, ry, w] of [[0, BOX_D / 2, 0, BOX_W], [0, -BOX_D / 2, Math.PI, BOX_W], [BOX_W / 2, 0, Math.PI / 2, BOX_D], [-BOX_W / 2, 0, -Math.PI / 2, BOX_D]] as const) {
+        const piv = new THREE.Object3D(); piv.position.set(x, BOX_H, z); piv.rotation.order = 'YXZ'; piv.rotation.y = ry; // fold about the flap's own edge
+        const f = new THREE.Mesh(new THREE.PlaneGeometry(w, 0.3), fm); f.position.set(0, 0.15, 0); piv.add(f);
         this.cbox.add(piv); this.flaps.push(piv);
       }
       this.cbox.position.set(...BOXP); this.cbox.rotation.y = 0.1;
@@ -262,11 +263,14 @@ export default class ChorusSleep extends Ps1Stage {
       const main = plq(1.05, 0.25);
       if (t < w[0]!.start - 0.02) return { ...mix(boxTop, main, prog(t, a, w[0]!.start - 0.02, ease.inOutCubic)), roll: 0.03, fov: 52 };
       if (t < d[1]!) { const c = mix(main, plq(0.95, 0.1), prog(t, w[0]!.start, d[1]!, ease.inOutQuad)); c.P[2] -= kick(w[0]!.start, d[1]!, 0.04); return { ...c, roll: -0.02, fov: 52 }; }
-      const wide = { P: [-1.45, 1.8, -0.6] as V3, T: [-1.75, 0.95, -2.85] as V3 };
+      // (low: the box's rim hides its inside)
+      const wide = { P: [-1.5, 1.22, -0.75] as V3, T: [-1.85, 1.12, -2.85] as V3 };
       if (t < keep.start + 0.05) return { ...mix(plq(0.95, 0.1), wide, prog(t, d[1]!, d[1]! + 0.35, ease.outExpo)), roll: 0.02, fov: 52 };
-      const down = { P: [BOXP[0] + 0.05, 2.35, BOXP[2] + 0.45] as V3, T: [BOXP[0], 0.6, BOXP[2] - 0.05] as V3 };
-      const lid = { P: [BOXP[0], 1.72, BOXP[2] + 0.05] as V3, T: [BOXP[0], 0.6, BOXP[2] - 0.02] as V3 };
-      const m = mix(mix(wide, down, prog(t, keep.start - 0.08, keep.start + 0.12, ease.inOutCubic)), lid, prog(t, keep.start + 0.2, this.ctx.end, ease.inCubic));
+      // outside the box (its inside is never shown): the front, with the plaque sticking out of it, then a push
+      // into the cardboard face as the light goes (plumber opens on its cabinet doors)
+      const front = { P: [BOXP[0] + 0.3, BOXP[1] + 0.55, BOXP[2] + 1.15] as V3, T: [BOXP[0], BOXP[1] + 0.5, BOXP[2]] as V3 };
+      const close = { P: [BOXP[0] + 0.15, BOXP[1] + 0.58, BOXP[2] + 0.95] as V3, T: [BOXP[0], BOXP[1] + 0.52, BOXP[2]] as V3 };
+      const m = mix(mix(wide, front, prog(t, keep.start - 0.08, keep.start + 0.12, ease.inOutCubic)), close, prog(t, keep.start + 0.12, this.ctx.end, ease.outCubic));
       return { ...m, roll: 0, fov: 52 };
     }
     if (this.v === 2) {
@@ -529,8 +533,10 @@ export default class ChorusSleep extends Ps1Stage {
     const w = this.L3.words, keep = w[w.length - 1]!;
     const fly = fin ? prog(t, keep.start - 0.05, keep.start + 0.15, ease.inOutQuad) : 0;
     const arc = Math.sin(Math.PI * fly) * 0.6;
-    pm.position.set(lerp(PLQ[0], BOXP[0], fly), lerp(PLQ[1], BOXP[1] + 0.12, fly) + arc, lerp(PLQ[2], BOXP[2], fly));
-    pm.rotation.set(lerp(PLQ_TILT, -Math.PI / 2, fly), lerp(0.08, 0.1, fly), 0);
+    // (final) it lands upright in the small box, its lower part inside, the rest sticking out over the rim
+    const outY = BOXP[1] + BOX_H + PLAQ_H * this.ptx * 0.44; // only its bottom edge inside: "keep..." stays readable
+    pm.position.set(lerp(PLQ[0], BOXP[0], fly), lerp(PLQ[1], outY, fly) + arc, lerp(PLQ[2], BOXP[2] + 0.05, fly));
+    pm.rotation.set(lerp(PLQ_TILT, -0.12, fly), lerp(0.08, 0.2, fly), lerp(0, 0.05, fly));
     pm.scale.set(PLAQ_W * this.ptx, PLAQ_H * this.ptx, 1);
     // content
     let key = '';
@@ -599,7 +605,8 @@ export default class ChorusSleep extends Ps1Stage {
     b.head.setFace(t > not.start && t < not.end + 0.2 ? 'talk' : 'happy', Math.floor(t * 8));
     b.body.root.rotation.y = 0.35 + 0.25 * Math.sin(t * 3);
     // the flaps: open outwards, then shut after the plaque lands
-    const close = prog(t, keep.start + 0.08, this.ctx.end - 0.16, ease.inOutCubic);
-    this.flaps.forEach((fl, i) => { fl.rotation.x = lerp(1.9, -Math.PI / 2, clamp(close * 1.15 - (i > 1 ? 0.15 : 0))); });
+    // the flaps stay open (the plaque sticks out); they jolt when it lands
+    const jolt = t >= keep.start + 0.15 ? Math.exp(-(t - keep.start - 0.15) * 7) * Math.sin((t - keep.start - 0.15) * 30) : 0;
+    this.flaps.forEach((fl, i) => { fl.rotation.x = 2.1 + 0.12 * jolt * (i % 2 ? 1 : -1); });
   }
 }
