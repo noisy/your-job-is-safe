@@ -2,7 +2,7 @@
 // keys, / My Tesla's driving me, hands-free, / The wine is dripping down on me... / Will Smith eats
 // spaghetti, smooth and slow, / And I can't tell it's fake... / ...Oh no."
 // Out of the dark (the duck's eye from the breakdown) into DEV's foggy room; grandma's storybook with blank
-// pages; a one-second flash of a car through a painted-road wall (plain-text caption), then DEV riding in a
+// pages; the coast-to-coast map where the car's route swerves round a US-sized painted wall, then DEV riding in a
 // car that drives itself, hands on his knees; a wine glass over him, full to the brim and dripping on him;
 // the spaghetti diner guy again but smooth, calm and shaded (the one model that doesn't wobble); DEV at his
 // CRT unable to tell; "…Oh no." and the fog whites out on the downbeat (→ the final chorus).
@@ -58,8 +58,9 @@ export default class Bridge extends Ps1Stage {
     this.cuts = [
       near(L[1]!.start - 0.1), // grandma
       near(L[2]!.start + 0.4), // the map: coast to coast
-      near(L[2]!.start + 2.4), // the car
-      near(L[3]!.end - 1.9), // the glass
+      // (no separate car shot: the map holds until the wine line, which cuts to the glass on its first beat)
+      au.nearestBeat(L[3]!.start), // the car (unused: same as the glass)
+      au.nearestBeat(L[3]!.start), // the glass
       near(L[4]!.start + 0.4), // the diner
       near(L[5]!.start - 0.5), // DEV at the CRT
       near(L[6]!.start - 0.45), // his face
@@ -202,7 +203,26 @@ export default class Bridge extends Ps1Stage {
     const at = ([x, y]: [number, number]) => new THREE.Vector3(WX + (x - 0.5) * 8, 0.35, (y - 0.5) * 5);
     const la = this.label('Los Angeles, CA', P.uiLine, P.uiNavy, 1, 1 / 45); la.position.copy(at(ROUTE[0]!)).add(new THREE.Vector3(0.2, 0.1, 0.55));
     const mb = this.label('Myrtle Beach, SC', P.uiLine, P.uiNavy, 1, 1 / 45); mb.position.copy(at(ROUTE[ROUTE.length - 1]!)).add(new THREE.Vector3(-0.5, 0.1, 0.55));
-    this.mapLabels = [la, mb];
+    // the painted wall, US-sized, standing across the old straight route in the middle of the country: its
+    // painted road faces west, the way the car comes; the route (and the car) now swerves round it
+    const R3 = rng(62);
+    const wallT = canvasTex(48, 32, (c) => {
+      c.fillStyle = '#7FA4D8'; c.fillRect(0, 0, 48, 15);
+      c.fillStyle = '#F3ECDF'; c.fillRect(6, 4, 9, 2); c.fillRect(31, 7, 10, 2);
+      c.fillStyle = '#4E7A44'; c.fillRect(0, 15, 48, 17);
+      c.fillStyle = '#44464F'; c.beginPath(); c.moveTo(10, 32); c.lineTo(22, 15); c.lineTo(26, 15); c.lineTo(38, 32); c.fill();
+      c.fillStyle = '#F3ECDF'; for (let y = 18; y < 32; y += 4) c.fillRect(23, y, 2, 2);
+      for (let i = 0; i < 24; i++) { c.fillStyle = shade('#4E7A44', 0.8 + R3() * 0.3); c.fillRect(Math.floor(R3() * 48), 15 + Math.floor(R3() * 17), 1, 1); }
+    }).tex;
+    const side = psMat({ color: '#D8D2C4' }), paint = psMat({ map: wallT });
+    const W3 = WALL[1] - WALL[0];
+    const wall = box(0.14, 1.3, W3 * 5, [paint, side, side, side, side, side]);
+    // (turned a little toward the camera, which looks from the south-west: the painted road reads)
+    wall.position.set(WX + (WALL_X - 0.5) * 8, 0.67, ((WALL[0] + WALL[1]) / 2 - 0.5) * 5); wall.rotation.y = -0.55;
+    this.world.add(wall);
+    const wl = this.label('painted wall ✗', P.uiLine, P.fail, 1, 1 / 45);
+    wl.position.set(wall.position.x - 0.35, 0.18, wall.position.z + 0.95);
+    this.mapLabels = [la, mb, wl];
   }
 
   // ---------------------------------------------------------------- the camera
@@ -421,7 +441,10 @@ function drawSmoothClip(c: CanvasRenderingContext2D, t: number) {
 const OUTLINE: [number, number][] = [[0.03, 0.12], [0.14, 0.09], [0.42, 0.11], [0.56, 0.13], [0.62, 0.21], [0.68, 0.16], [0.77, 0.2], [0.86, 0.12], [0.93, 0.05], [0.97, 0.12],
   [0.9, 0.24], [0.87, 0.34], [0.84, 0.45], [0.81, 0.57], [0.76, 0.67], [0.81, 0.86], [0.77, 0.89], [0.72, 0.73], [0.62, 0.72], [0.55, 0.76], [0.48, 0.93], [0.42, 0.81],
   [0.33, 0.72], [0.22, 0.7], [0.12, 0.63], [0.06, 0.46], [0.02, 0.3]];
-const ROUTE: [number, number][] = [[0.12, 0.6], [0.2, 0.63], [0.3, 0.64], [0.4, 0.62], [0.5, 0.6], [0.6, 0.61], [0.7, 0.6], [0.79, 0.58]];
+/** The painted wall standing on the map: its x, and the y (north-south) span it blocks. */
+const WALL_X = 0.46, WALL: [number, number] = [0.5, 0.7];
+/** LA → Myrtle Beach, swerving south round the painted wall. */
+const ROUTE: [number, number][] = [[0.12, 0.6], [0.2, 0.63], [0.3, 0.64], [0.38, 0.64], [0.43, 0.75], [0.49, 0.75], [0.54, 0.64], [0.62, 0.61], [0.7, 0.6], [0.79, 0.58]];
 function routeAt(r: [number, number][], u: number): [number, number] {
   const f = clamp(u) * (r.length - 1), i = Math.min(r.length - 2, Math.floor(f)), k = f - i;
   return [lerp(r[i]![0], r[i + 1]![0], k), lerp(r[i]![1], r[i + 1]![1], k)];
