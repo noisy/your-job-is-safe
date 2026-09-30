@@ -131,9 +131,10 @@ export default class ChorusSleep extends Ps1Stage {
       this.bubble = makeCloud(1.7);
       this.bubble.root.position.set(...BUB);
       this.world.add(this.bubble.root);
-      for (let i = 0; i < 3; i++) {
-        const p = new THREE.Mesh(new THREE.IcosahedronGeometry(0.07 + i * 0.05, 1), this.bubble.mat);
-        const u = 0.45 + i * 0.17;
+      // the thought trail .ooOO: four puffs from DEV's head up to the bubble, small to big
+      for (let i = 0; i < 4; i++) {
+        const p = new THREE.Mesh(new THREE.IcosahedronGeometry(0.06 + i * 0.05, 1), this.bubble.mat);
+        const u = 0.3 + i * 0.16;
         p.position.set(lerp(HEAD[0] + 0.2, BUB[0], u), lerp(HEAD[1] + 0.5, BUB[1] - 1.0, u), lerp(HEAD[2] + 0.2, BUB[2], u));
         this.world.add(p); this.puffs.push(p);
       }
@@ -424,11 +425,18 @@ export default class ChorusSleep extends Ps1Stage {
         this.wipe.root.scale.setScalar(Math.max(0.01, k * 1.3));
       }
       this.bubble.root.visible = t < this.tDive + 0.05;
-      const grow = springStep(t - (this.v === 2 ? this.db[1]! - 0.25 : this.L1.words[0]!.start - 0.35), 1.8, 0.5);
+      // the trail pops one puff at a time from the scene's first frame, then the bubble grows: it is there before
+      // the first dream letter arrives (the letters fly up for ~0.5 s)
+      const a0 = this.ctx.start + 0.01, PUFF = 0.045, tBub = a0 + 2 * PUFF;
+      const grow = springStep(t - tBub, 3.2, 0.5);
       const gs = Math.max(0.001, grow) * (1 + 0.03 * Math.sin(t * 3));
       this.bubble.root.scale.set(gs * 2.05, gs * 1.2, gs);
       this.bubble.root.visible = this.bubble.root.visible && grow > 0.01;
-      this.puffs.forEach((p, i) => { p.visible = t < this.tDive && t > this.L1.words[0]!.start - 0.4 + i * 0.08; });
+      this.puffs.forEach((p, i) => {
+        const pop = clamp(springStep(t - (a0 + i * PUFF), 4, 0.45), 0, 1.25);
+        p.visible = t < this.tDive && pop > 0.01;
+        p.scale.setScalar(Math.max(0.01, pop));
+      });
       // stage curtain (v1), patch notes on the CRT (v2)
       if (this.v === 1) this.stage.curtain.position.y = lerp(9.6, 3.3, prog(t, this.ctx.end - 0.75, this.ctx.end - 0.3, ease.inQuad));
       if (this.v === 2) this.drawScreen(t > this.tWide - 1.2 ? 'patch' : 'sleep', prog(t, this.tWide - 1.2, this.ctx.end + 0.6));
