@@ -22,7 +22,7 @@ const TITLE_X = 100; // the title screen set
 const NEWS_X = 200; // the newsflash set
 const PAGE_W = 3.0, PAGE_H = PAGE_W * (PAGE_TH / PAGE_TW);
 const LEAF_W = 0.6, LEAF_H = LEAF_W * (76 / 64);
-const CAL: V3 = [-1.05, 1.5, -4.13];
+const CAL: V3 = [-0.62, 1.95, -4.13]; // (right of the window frame, above the monitor)
 
 type Stamp = { w: string; t: number; page: number; inked: boolean; obj: { root: THREE.Group; width: number; letters: THREE.Object3D[] } };
 
