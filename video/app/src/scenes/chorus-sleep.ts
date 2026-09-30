@@ -269,8 +269,8 @@ export default class ChorusSleep extends Ps1Stage {
       // outside the box (its inside is never shown): the front, with the plaque sticking out of it, then a push
       // into the cardboard face as the light goes (plumber opens on its cabinet doors)
       // from in front, just above the rim: the angled plaque reads, the front wall hides the inside
-      const front = { P: [BOXP[0] + 0.3, BOXP[1] + 0.85, BOXP[2] + 1.4] as V3, T: [BOXP[0], BOXP[1] + 0.66, BOXP[2]] as V3 };
-      const close = { P: [BOXP[0] + 0.18, BOXP[1] + 0.8, BOXP[2] + 1.12] as V3, T: [BOXP[0] + 0.02, BOXP[1] + 0.66, BOXP[2]] as V3 };
+      const front = { P: [BOXP[0] + 0.42, BOXP[1] + 0.85, BOXP[2] + 1.4] as V3, T: [BOXP[0] + 0.12, BOXP[1] + 0.66, BOXP[2]] as V3 };
+      const close = { P: [BOXP[0] + 0.3, BOXP[1] + 0.8, BOXP[2] + 1.12] as V3, T: [BOXP[0] + 0.14, BOXP[1] + 0.66, BOXP[2]] as V3 };
       const m = mix(mix(wide, front, prog(t, keep.start - 0.08, keep.start + 0.12, ease.inOutCubic)), close, prog(t, keep.start + 0.12, this.ctx.end, ease.outCubic));
       return { ...m, roll: 0, fov: 52 };
     }
@@ -539,7 +539,7 @@ export default class ChorusSleep extends Ps1Stage {
     // (tilted ~30°: only its lower-left corner is inside, between the walls; the bottom edge crosses the rim near
     // the middle and the right half rests above the rim, past the wall, so it never cuts through the cardboard)
     const outY = BOXP[1] + BOX_H + 0.25;
-    pm.position.set(lerp(PLQ[0], BOXP[0] + 0.14, fly), lerp(PLQ[1], outY, fly) + arc, lerp(PLQ[2], BOXP[2] + 0.02, fly)); // (right of centre: the dipped corner clears the left wall)
+    pm.position.set(lerp(PLQ[0], BOXP[0] + 0.26, fly), lerp(PLQ[1], outY, fly) + arc, lerp(PLQ[2], BOXP[2] + 0.02, fly)); // (right of centre: the dipped corner clears the left wall)
     pm.rotation.set(lerp(PLQ_TILT, -0.35, fly), lerp(0.08, 0.12, fly), lerp(0, 0.5, fly));
     pm.scale.set(PLAQ_W * this.ptx, PLAQ_H * this.ptx, 1);
     // content
