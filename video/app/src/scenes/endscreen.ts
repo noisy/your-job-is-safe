@@ -33,6 +33,7 @@ export default class EndScreen extends Ps1Stage {
   private forNow!: THREE.Mesh; private hud!: THREE.Mesh;
   private title!: ReturnType<Ps1Stage['blockTitle']>;
   private question!: THREE.Mesh;
+  private sub!: THREE.Mesh; private subX = [0, 0, 0, 0];
   private frames: THREE.Mesh[] = [];
   private labels: { mesh: THREE.Mesh; tex: ReturnType<typeof canvasTex>; key: string }[] = [];
   private burst!: THREE.Group;
@@ -78,6 +79,19 @@ export default class EndScreen extends Ps1Stage {
     const q = 'WHERE WILL AI LEAD US?';
     const qt = canvasTex(200, 12, (c) => pixText(c, q, 100 - textW(q) / 2, 2, P.uiLine, 1, { shadow: P.uiEdge }));
     this.question = this.quad(qt.tex, 460, 70, 1460, 130);
+    // SUBSCRIBE!: a red game button at the bottom centre, between DEV and the robot (below the labels)
+    const SW = 150, SH = 24, label = 'SUBSCRIBE!';
+    const sub = canvasTex(SW, SH, (c) => {
+      c.fillStyle = P.uiEdge; c.fillRect(1, 0, SW - 2, SH); c.fillRect(0, 1, SW, SH - 2);
+      c.fillStyle = '#B5121B'; c.fillRect(2, 2, SW - 4, SH - 4);
+      c.fillStyle = '#E8333C'; c.fillRect(2, 2, SW - 4, 9);
+      c.fillStyle = '#7A0A10'; c.fillRect(2, SH - 4, SW - 4, 2);
+      const tw = textW(label, 2), x = Math.round((SW - tw - 14) / 2);
+      pixText(c, '▶', x, 8, '#FFFFFF', 1, { shadow: '#5A0508' });
+      pixText(c, label, x + 14, 5, '#FFFFFF', 2, { shadow: '#5A0508' });
+    });
+    this.subX = [660, 885, 1260, 981];
+    this.sub = this.quad(sub.tex, 660, 885, 1260, 981);
     TILES.forEach((tl) => {
       const x0 = tl.x0 - BORDER, x1 = tl.x1 + BORDER, y0 = TY0 - BORDER, y1 = TY1 + BORDER;
       const tw = (x1 - x0) / 5, th = (y1 - y0) / 5, b = BORDER / 5;
@@ -200,6 +214,16 @@ export default class EndScreen extends Ps1Stage {
       lb.tex.tex.needsUpdate = true;
     });
 
+    // SUBSCRIBE! pops in after the labels, then pulses gently (a press on every other bar)
+    {
+      const [x0, y0, x1, y1] = this.subX as [number, number, number, number];
+      const o = clamp(springStep(u - 1.3, 2.6, 0.45), 0, 1.15);
+      const press = Math.max(0, Math.sin(u * Math.PI * 0.72)) ** 8;
+      const k = o * (1 + 0.05 * Math.sin(u * 5)) * (1 - 0.06 * press);
+      this.sub.visible = u > 1.3;
+      this.sub.scale.set((wx(x1) - wx(x0)) * k, (wy(y0) - wy(y1)) * k, 1);
+      this.sub.position.y = (wy(y0) + wy(y1)) / 2 - 0.02 * press;
+    }
     // DEV waits, arms crossed, hoping (a glance to the left tile now and then); the robot twirls its wrench
     const pop = (d: number) => clamp(springStep(u - d, 2.6, 0.4), 0, 1.2);
     this.dev.root.visible = u > 0.9;
