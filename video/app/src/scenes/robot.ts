@@ -234,13 +234,14 @@ export default class Robot extends Ps1Stage {
       dev.root.rotation.y = lerp(Math.PI, 1.5 * Math.PI, prog(t, d0, d0 + 0.3, ease.outCubic));
       const sw = Math.sin((t - d0) * 11) * 0.5 * (walk > 0 && walk < 1 ? 1 : 0);
       dev.legL.rotation.x = sw; dev.legR.rotation.x = -sw; dev.armL.rotation.x = -sw * 0.6; dev.armR.rotation.x = sw * 0.6;
-      dev.setFace(t < d0 + 0.3 ? 'shock' : 'neutral');
+      dev.setFace('smug'); // happy on the way: he doesn't know who's at the door yet
       return;
     }
     if (t < d4 + 0.2) {
       // at the door, facing the robot: smug ("absolutely right"), then unsure
       dev.root.position.set(2.5, 0, -1.02); dev.root.rotation.y = -Math.PI / 2 + 0.2;
-      dev.setFace(t < this.L1.words[2]!.end ? 'smug' : 'shock');
+      // the door is open: he sees the robot (shock), "You're absolutely right" wins him back (smug), then shock
+      dev.setFace(t < this.L1.start ? 'shock' : t < this.L1.words[2]!.end ? 'smug' : 'shock');
       dev.armR.rotation.x = t < this.L1.words[2]!.end ? -0.3 : 0;
       return;
     }

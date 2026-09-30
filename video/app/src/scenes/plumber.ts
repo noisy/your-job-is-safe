@@ -195,10 +195,9 @@ export default class Plumber extends Ps1Stage {
       dev.legL.rotation.z = -0.18 * raise; dev.legR.rotation.z = 0.18 * raise;
       dev.torso.rotation.x = -0.05 * raise;
       dev.setFace('smug');
-      // at the very end he hears something at the door
+      // at the very end he hears the doorbell and turns to it, still pleased with himself (the shock comes at the door)
       const turn = prog(t, this.ctx.end - 0.45, this.ctx.end - 0.15, ease.inOutCubic);
       dev.head.rotation.y = -1.1 * turn;
-      if (turn > 0) dev.setFace('shock');
     }
     // the faucet drips until he fixes it on "sink,"
     const fixed = t >= this.P1.words[8]!.start;
