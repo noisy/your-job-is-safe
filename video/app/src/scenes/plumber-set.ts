@@ -1,6 +1,7 @@
 // The kitchen set shared by `plumber` and `robot`: tiled walls, the sink counter with its cabinet (hinged doors,
 // the trap inside), a dripping faucet, and the front door in the right wall (it opens onto a night porch).
 import * as THREE from 'three';
+import { makeFrame } from '../ps1/cast';
 import { psMat, canvasTex, rng, shade } from '../ps1/gfx';
 import { P } from '../ps1/palette';
 
@@ -79,5 +80,9 @@ export function makeKitchen(): Kitchen {
     // a window over the sink
     const winT = canvasTex(32, 24, (c) => { c.fillStyle = '#1B2A55'; c.fillRect(0, 0, 32, 24); c.fillStyle = '#F4E3A3'; c.fillRect(24, 4, 3, 3); c.fillStyle = '#3B281C'; c.fillRect(15, 0, 2, 24); c.fillRect(0, 11, 32, 2); });
     const win = new THREE.Mesh(new THREE.PlaneGeometry(1.2, 0.9), psMat({ map: winT.tex, unlit: true })); win.position.set(-3.38, 2.3, -1.2); win.rotation.y = Math.PI / 2; root.add(win);
+    const wf = makeFrame(1.2, 0.9, { sill: true, color: '#E8E0D0' }); wf.position.set(-3.4, 2.3, -1.2); wf.rotation.y = Math.PI / 2; root.add(wf);
+    // the front door's casing, on the room side of the right wall (the door swings inside it)
+    const dc = makeFrame(DOOR_Z1 - DOOR_Z0, 2.1, { color: '#E8E0D0', bottom: false, t: 0.11 });
+    dc.position.set(3.2, 1.05, (DOOR_Z0 + DOOR_Z1) / 2); dc.rotation.y = -Math.PI / 2; root.add(dc);
     return { root, doorL, doorR, drip, doorPivot };
 }

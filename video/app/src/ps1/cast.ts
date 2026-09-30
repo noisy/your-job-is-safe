@@ -253,6 +253,22 @@ export function makeDuck() {
 }
 
 /** `props: false` leaves out the plain keyboard and the mug (for scenes that build detailed ones). */
+/**
+ * A wooden frame around a w x h opening on a wall, centred on the opening, standing out of the wall along +z
+ * (rotate the group like the opening). `sill`: a deeper ledge under it (windows); `bottom: false`: no bottom rail (doors).
+ */
+export function makeFrame(w: number, h: number, o: { t?: number; depth?: number; color?: string; sill?: boolean; bottom?: boolean } = {}) {
+  const t = o.t ?? 0.1, dp = o.depth ?? 0.08;
+  const m = psMat({ color: o.color ?? '#4A3222' });
+  const g = new THREE.Group();
+  const add = (bw: number, bh: number, bd: number, x: number, y: number, z = dp / 2) => { const b = box(bw, bh, bd, m); b.position.set(x, y, z); g.add(b); };
+  add(t, h + 2 * t, dp, -(w + t) / 2, 0); add(t, h + 2 * t, dp, (w + t) / 2, 0); // jambs
+  add(w + 2 * t, t, dp, 0, (h + t) / 2); // head
+  if (o.bottom !== false) add(w + 2 * t, t, dp, 0, -(h + t) / 2);
+  if (o.sill) add(w + 2 * t + 0.12, t * 0.7, dp + 0.14, 0, -(h + t) / 2 - t * 0.5, (dp + 0.14) / 2);
+  return g;
+}
+
 export function makeRoom(opts: { props?: boolean } = {}): Room {
   const props = opts.props ?? true;
   const root = new THREE.Group();
@@ -280,6 +296,7 @@ export function makeRoom(opts: { props?: boolean } = {}): Room {
     c.fillStyle = '#3B281C'; c.fillRect(15, 0, 2, 32); c.fillRect(0, 15, 32, 2);
   }).tex;
   const win = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 1.2), psMat({ map: winT, unlit: true })); win.position.set(-2.2, 2.4, -4.18); root.add(win);
+  const wf = makeFrame(1.6, 1.2, { sill: true }); wf.position.set(-2.2, 2.4, -4.2); root.add(wf);
   const woodT = canvasTex(32, 32, (c) => {
     for (let y = 0; y < 32; y++) for (let x = 0; x < 32; x++) { c.fillStyle = shade(P.wood, 0.85 + 0.2 * Math.abs(Math.sin(y * 0.9 + Math.sin(x * 0.3) * 2)) + R() * 0.05); c.fillRect(x, y, 1, 1); }
   }).tex;
