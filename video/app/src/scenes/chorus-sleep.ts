@@ -539,7 +539,7 @@ export default class ChorusSleep extends Ps1Stage {
     // (tilted ~30°: only its lower-left corner is inside, between the walls; the bottom edge crosses the rim near
     // the middle and the right half rests above the rim, past the wall, so it never cuts through the cardboard)
     const outY = BOXP[1] + BOX_H + 0.25;
-    pm.position.set(lerp(PLQ[0], BOXP[0], fly), lerp(PLQ[1], outY, fly) + arc, lerp(PLQ[2], BOXP[2] + 0.02, fly));
+    pm.position.set(lerp(PLQ[0], BOXP[0] + 0.14, fly), lerp(PLQ[1], outY, fly) + arc, lerp(PLQ[2], BOXP[2] + 0.02, fly)); // (right of centre: the dipped corner clears the left wall)
     pm.rotation.set(lerp(PLQ_TILT, -0.35, fly), lerp(0.08, 0.12, fly), lerp(0, 0.5, fly));
     pm.scale.set(PLAQ_W * this.ptx, PLAQ_H * this.ptx, 1);
     // content
