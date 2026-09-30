@@ -1,0 +1,540 @@
+models=mms,lv60k margin=1.5 words=475 whisper_matched=457 refined_from_whisper=['Asked@67.16', 'at@107.28', 'AI@185.24']
+whisper-ctc start delta: median -0.080s  |d|<0.1: 61%  |d|<0.25: 89%
+
+[intro]    0.72-   3.40  "AI will replace all programmers by next year."
+       0.72    1.02 0.06  AI  wh-0.72  <<<  LOWCONF
+       1.04    1.22 0.84  will  wh-0.18
+       1.24    1.68 0.65  replace  wh-0.08
+       1.78    1.90 0.83  all  wh-0.22
+       1.96    2.58 0.68  programmers  wh-0.10
+       2.62    2.82 0.75  by  wh-0.20
+       2.84    3.06 0.50  next  wh-0.12
+       3.14    3.40 0.63  year.  wh-0.12
+[intro]    5.80-   7.90  Yeah. They said that last year too.
+       5.80    6.08 0.27  Yeah.  wh-0.26  <<<
+       6.62    6.76 0.50  They  wh-0.04
+       6.78    6.92 0.71  said  wh-0.04
+       6.96    7.10 0.72  that  wh-0.04
+       7.12    7.36 0.51  last  wh-0.06
+       7.42    7.58 0.79  year  wh-0.10
+       7.64    7.90 0.65  too.  wh-0.10
+[verse1]    9.08-  11.94  I write my code by hand, every semicolon mine,
+       9.08    9.20 0.50  I  wh-0.22
+       9.22    9.38 0.58  write  wh-0.04
+       9.40    9.52 0.74  my  wh-0.06
+       9.56    9.84 0.33  code  wh-0.06
+       9.92   10.26 0.50  by  wh-0.08
+      10.28   10.66 0.72  hand,  wh-0.16
+      10.68   10.92 0.89  every  wh+0.06
+      10.94   11.62 0.62  semicolon  wh-0.10
+      11.64   11.94 0.60  mine,  wh-0.10
+[verse1]   11.98-  14.58  Twenty years of tabs, never spaces - by design,
+      11.98   12.32 0.58  Twenty
+      12.34   12.58 0.64  years  wh-0.14
+      12.60   12.63 0.06  of  wh-0.12  LOWCONF
+      12.64   13.06 0.42  tabs,  wh+0.06
+      13.08   13.30 1.00  never  wh+0.00
+      13.32   13.70 0.74  spaces  wh-0.08
+      13.74   14.06 0.49  by  wh-0.14
+      14.08   14.58 0.32  design,  wh-0.14
+[verse1]   14.60-  17.30  They said "try the robot, bro", I said "show me the proof",
+      14.60   14.74 0.37  They  wh+0.08
+      14.76   14.98 0.62  said  wh-0.06
+      15.06   15.28 0.62  try  wh+0.04
+      15.30   15.44 0.45  the  wh-0.06
+      15.46   15.78 0.36  robot,  wh-0.06
+      15.82   16.12 0.78  bro",  wh+0.06
+      16.18   16.26 0.49  I  wh+0.00
+      16.28   16.46 0.56  said  wh-0.04
+      16.48   16.68 0.74  show  wh-0.04
+      16.70   16.82 0.73  me  wh-0.08
+      16.86   16.92 0.66  the  wh-0.10
+      17.00   17.30 0.89  proof",  wh-0.06
+[verse1]   17.54-  20.08  Drew a hand with extra fingers - what a goof!
+      17.54   17.76 0.34  Drew  wh+0.02
+      17.78   17.86 0.43  a  wh-0.10
+      17.88   18.08 0.52  hand  wh+0.00
+      18.10   18.22 0.80  with  wh-0.06
+      18.28   18.50 0.76  extra  wh-0.08
+      18.60   19.06 0.64  fingers  wh-0.12
+      19.28   19.46 0.51  what  wh+0.02
+      19.66   19.80 0.81  a  wh-0.22
+      19.82   20.08 0.61  goof!  wh-0.10
+[verse1]   20.12-  22.90  Then the Fresh Prince got jiggy with a plate of spaghetti,
+      20.12   20.30 0.34  Then  wh+0.08
+      20.32   20.40 0.35  the  wh-0.04
+      20.48   20.64 0.39  Fresh  wh-0.04
+      20.68   20.98 0.45  Prince  wh-0.06
+      21.02   21.24 0.53  got  wh-0.14
+      21.32   21.72 0.44  jiggy  wh-0.10
+      21.74   21.93 0.85  with  wh-0.10
+      21.94   22.00 0.05  a  LOWCONF
+      22.04   22.26 0.59  plate  wh-0.04
+      22.28   22.31 0.12  of  wh-0.04  LOWCONF
+      22.32   22.90 0.46  spaghetti,  wh+0.00
+[verse1]   23.10-  25.84  Face melting in the sauce, fork flying like confetti,
+      23.10   23.42 0.58  Face  wh-0.10
+      23.44   23.82 0.49  melting  wh-0.10
+      23.84   23.92 0.69  in  wh-0.14
+      23.94   24.08 0.24  the  wh+0.02
+      24.10   24.44 0.45  sauce,  wh-0.04
+      24.48   24.74 0.60  fork  wh-0.12
+      24.80   25.16 0.56  flying  wh+0.06
+      25.18   25.32 0.46  like  wh-0.08
+      25.36   25.84 0.49  confetti,  wh-0.04
+[verse1]   25.88-  28.54  Told it "be my grandma", it read me Windows keys,
+      25.88   26.10 0.59  Told  wh+0.02
+      26.12   26.20 0.80  it  wh-0.10
+      26.24   26.38 0.46  be  wh-0.06
+      26.40   26.54 0.48  my  wh-0.06
+      26.60   27.16 0.68  grandma",  wh-0.08
+      27.18   27.24 0.50  it  wh+0.04
+      27.28   27.42 0.71  read  wh+0.00
+      27.48   27.60 0.71  me  wh-0.08
+      27.62   28.08 0.65  Windows  wh-0.06
+      28.12   28.54 0.38  keys,  wh-0.20
+[verse1]   28.56-  31.42  Asked it what year it was - "twenty twenty-one, please!"
+      28.56   28.72 0.25  Asked  wh-0.08
+      28.74   28.80 0.21  it  wh+0.00
+      28.84   28.96 0.70  what  wh-0.04
+      29.02   29.24 0.46  year  wh-0.08
+      29.26   29.32 0.50  it  wh-0.10
+      29.38   29.66 0.66  was  wh-0.06
+      29.68   29.98 0.52  twenty
+      30.04   30.80 0.51  twenty-one,
+      30.86   31.42 0.53  please!  wh+0.06
+[pre1]   31.60-  34.10  So go ahead and hype it, call it genius, call it smart,
+      31.60   31.76 0.37  So  wh-0.06
+      31.78   32.04 0.51  go  wh-0.08
+      32.06   32.36 0.48  ahead  wh-0.10
+      32.38   32.46 0.12  and  wh-0.12  LOWCONF
+      32.50   32.71 0.30  hype  wh-0.04
+      32.72   32.78 0.12  it,  wh-0.06  LOWCONF
+      32.84   33.04 0.45  call  wh+0.04
+      33.06   33.14 0.16  it  wh-0.08  LOWCONF
+      33.18   33.50 0.58  genius,  wh-0.04
+      33.52   33.72 0.59  call  wh+0.00
+      33.74   33.82 0.55  it  wh-0.06
+      33.84   34.10 0.48  smart,  wh-0.04
+[pre1]   34.28-  37.06  I'll be over here hand-typing - it's a craft, it's an art!
+      34.28   34.40 0.44  I'll  wh-0.10
+      34.42   34.60 0.45  be  wh-0.02
+      34.64   34.92 0.40  over  wh-0.10
+      34.96   35.08 0.13  here  wh-0.16  LOWCONF
+      35.10   35.68 0.44  hand-typing
+      35.70   35.82 0.46  it's  wh-0.20
+      35.84   35.90 0.28  a  wh+0.00
+      35.92   36.28 0.54  craft,  wh-0.02
+      36.36   36.54 0.51  it's  wh+0.00
+      36.58   36.82 0.29  an  wh-0.04
+      36.86   37.06 0.49  art!  wh-0.18
+[pre1]   37.10-  39.72  It's slop, it's slop, it's a slop machine,
+      37.10   37.22 0.28  It's  wh+0.00
+      37.26   37.60 0.44  slop,  wh+0.00
+      37.80   37.94 0.38  it's  wh-0.08
+      37.98   38.32 0.47  slop,  wh+0.02
+      38.44   38.56 0.53  it's  wh-0.06
+      38.60   38.66 0.50  a  wh-0.04
+      38.68   38.98 0.48  slop  wh-0.02
+      39.06   39.72 0.58  machine,  wh-0.12
+[pre1]   39.76-  42.26  Watch it try to do the simplest thing!
+      39.76   39.96 0.50  Watch  wh-0.10
+      40.00   40.06 0.13  it  LOWCONF
+      40.10   40.28 0.60  try  wh-0.04
+      40.32   40.44 0.17  to  wh-0.06  LOWCONF
+      40.48   40.64 0.58  do  wh-0.04
+      40.68   40.76 0.46  the  wh-0.08
+      40.80   41.40 0.51  simplest  wh-0.06
+      41.46   42.26 0.13  thing!  wh-0.24  LOWCONF
+[chorus1]   42.28-  44.68  It can't count the R's in strawberry,
+      42.28   42.34 0.29  It  wh-0.04
+      42.36   42.52 0.56  can't  wh+0.00
+      42.56   42.72 0.52  count  wh+0.00
+      42.76   43.08 0.53  the  wh-0.04
+      43.10   43.32 0.49  R's  wh-0.24
+      43.34   43.50 0.56  in  wh-0.04
+      43.54   44.68 0.64  strawberry,  wh-0.06
+[chorus1]   45.04-  47.54  It can't fill a glass of wine,
+      45.04   45.10 0.30  It  wh-0.28  <<<
+      45.14   45.32 0.61  can't  wh-0.04
+      45.36   45.54 0.61  fill  wh-0.02
+      45.58   45.64 0.28  a  wh-0.08
+      45.68   46.02 0.48  glass  wh-0.04
+      46.12   46.22 0.07  of  wh-0.10  LOWCONF
+      46.24   47.54 0.18  wine,  wh+0.04  LOWCONF
+[chorus1]   47.86-  50.28  Every clock says ten past ten,
+      47.86   48.06 0.59  Every  wh-0.22
+      48.10   48.44 0.58  clock  wh-0.06
+      48.46   48.86 0.60  says  wh-0.16
+      49.14   49.48 0.81  ten
+      49.50   49.80 0.56  past  wh-0.18
+      49.86   50.28 0.64  ten,
+[chorus1]   50.38-  52.94  So I've got plenty of time!
+      50.38   50.68 0.73  So  wh-0.14
+      50.70   50.84 0.49  I've  wh-0.18
+      50.90   51.14 0.75  got  wh-0.04
+      51.22   52.32 0.36  plenty  wh-0.12
+      52.36   52.42 0.00  of  wh-0.28  <<<  LOWCONF
+      52.46   52.94 0.49  time!  wh-0.02
+[chorus1]   52.98-  55.58  Six fingers waving hi at me,
+      52.98   53.24 0.53  Six  wh+0.06
+      53.32   53.66 0.65  fingers  wh-0.12
+      53.68   54.04 0.21  waving  wh-0.06
+      54.06   54.80 0.20  hi  LOWCONF
+      54.82   54.92 0.20  at  wh-0.42  <<<  LOWCONF
+      55.06   55.58 0.39  me,  wh-0.08
+[chorus1]   55.60-  58.72  Nah, I'm not losing sleep,
+      55.60   56.18 0.18  Nah,  wh-0.04  LOWCONF
+      56.22   56.44 0.47  I'm  wh-0.04
+      56.48   56.80 0.47  not  wh-0.08
+      56.82   57.72 0.40  losing  wh-0.16
+      57.76   58.72 0.53  sleep,  wh-0.34  <<<
+[chorus1]   59.12-  61.78  It's a toy, it's a joke, it's a party trick,
+      59.12   59.26 0.49  It's  wh-0.34  <<<
+      59.30   59.36 0.41  a  wh-0.04
+      59.38   59.82 0.67  toy,  wh-0.04
+      59.84   59.98 0.57  it's  wh+0.02
+      60.00   60.08 0.26  a  wh-0.02
+      60.10   60.46 0.51  joke,  wh-0.04
+      60.54   60.68 0.49  it's  wh-0.10
+      60.70   60.76 0.23  a  wh-0.04
+      60.80   61.38 0.50  party  wh-0.04
+      61.46   61.78 0.51  trick,  wh-0.20
+[chorus1]   61.88-  65.10  And my job is mine to keep!
+      61.88   62.00 0.09  And  wh-0.16  LOWCONF
+      62.02   62.22 0.39  my  wh+0.02
+      62.32   63.06 0.25  job  wh-0.08
+      63.50   63.72 0.49  is  wh-0.70  <<<
+      63.76   64.44 0.53  mine  wh-0.14
+      64.46   64.60 0.50  to  wh-0.20
+      64.74   65.10 0.51  keep!  wh-0.02
+[verse2]   67.16-  70.26  Asked for the Founding Fathers, got the Hamilton cast,
+      67.16   67.59 0.11  Asked  wh+0.00  LOWCONF
+      67.60   67.74 0.48  for  wh+0.04
+      67.80   67.90 0.45  the  wh-0.08
+      67.94   68.26 0.59  Founding  wh-0.04
+      68.28   68.78 0.75  Fathers,  wh-0.14
+      69.00   69.10 0.26  got  wh-0.20
+      69.14   69.32 0.67  the  wh-0.04
+      69.34   69.82 0.53  Hamilton  wh-0.06
+      69.84   70.26 0.65  cast,  wh-0.16
+[verse2]   70.28-  72.94  Asked "misgender, or the apocalypse?" - it picked the blast!
+      70.28   70.50 0.18  Asked  wh-0.18  LOWCONF
+      70.52   71.06 0.74  misgender,
+      71.08   71.16 0.65  or  wh-0.16
+      71.20   71.28 0.47  the  wh-0.06
+      71.30   71.96 0.41  apocalypse?  wh-0.04
+      71.98   72.06 0.11  it  wh-0.08  LOWCONF
+      72.12   72.40 0.56  picked  wh-0.04
+      72.46   72.60 0.65  the  wh-0.10
+      72.62   72.94 0.43  blast!  wh-0.06
+[verse2]   72.96-  75.90  Then Grok dropped all its filters and veered the other way,
+      72.96   73.12 0.25  Then  wh-0.06
+      73.14   73.38 0.62  Grok  wh-0.02
+      73.46   73.88 0.24  dropped  wh-0.06
+      73.90   74.04 0.96  all  wh-0.30  <<<
+      74.06   74.16 0.66  its  wh-0.04
+      74.18   74.56 0.69  filters  wh-0.04
+      74.58   74.70 0.66  and  wh-0.10
+      74.72   75.04 0.41  veered  wh-0.02
+      75.06   75.34 0.78  the  wh-0.06
+      75.36   75.56 0.89  other  wh-0.16
+      75.58   75.90 0.67  way,  wh-0.10
+[verse2]   75.92-  78.68  Grew a funny little mustache - and that's all I'm gonna say.
+      75.92   76.12 0.50  Grew  wh-0.10
+      76.14   76.20 0.45  a  wh-0.06
+      76.26   76.62 0.58  funny  wh+0.00
+      76.64   76.94 0.63  little  wh-0.10
+      76.96   77.38 0.70  mustache  wh-0.10
+      77.40   77.48 0.35  and  wh-0.12
+      77.50   77.72 0.56  that's  wh-0.04
+      77.74   77.88 0.82  all  wh-0.04
+      77.90   78.04 0.59  I'm  wh-0.06
+      78.06   78.34 0.50  gonna  wh-0.04
+      78.36   78.68 0.65  say.  wh-0.14
+[verse2]   78.70-  81.46  Drive-thru bot ignored my "stop!" - nuggets pouring down like rain,
+      78.70   79.04 0.34  Drive-thru
+      79.06   79.26 0.37  bot
+      79.28   79.58 0.35  ignored  wh-0.02
+      79.60   79.70 0.49  my  wh-0.08
+      79.72   79.96 0.83  stop!  wh-0.06
+      80.10   80.40 0.66  nuggets  wh+0.00
+      80.44   80.78 0.67  pouring  wh-0.08
+      80.80   80.96 0.70  down  wh-0.12
+      80.98   81.16 0.70  like  wh-0.06
+      81.18   81.46 0.58  rain,  wh-0.08
+[verse2]   81.48-  84.40  Took a Waymo to my flight - it circled like a plane!
+      81.48   81.64 0.36  Took  wh-0.14
+      81.70   81.82 0.29  a  wh-0.08
+      81.84   82.16 0.44  Waymo  wh+0.00
+      82.18   82.34 0.57  to  wh-0.08
+      82.36   82.48 0.50  my  wh-0.08
+      82.52   82.82 0.66  flight  wh-0.06
+      83.08   83.18 0.95  it  wh+0.00
+      83.20   83.60 0.71  circled  wh-0.06
+      83.62   83.74 0.62  like  wh-0.06
+      83.80   83.86 0.94  a  wh-0.06
+      83.90   84.40 0.57  plane!  wh-0.02
+[pre2]   84.42-  87.10  So go ahead and tweet it, make a TikTok, make it trend,
+      84.42   84.58 0.50  So  wh-0.20
+      84.62   84.88 0.44  go  wh-0.10
+      84.90   85.14 0.53  ahead  wh-0.12
+      85.18   85.26 0.47  and  wh-0.10
+      85.28   85.52 0.49  tweet  wh-0.02
+      85.54   85.66 0.23  it,  wh-0.06
+      85.68   85.84 0.48  make  wh-0.02
+      85.86   85.92 0.04  a  wh-0.04  LOWCONF
+      85.98   86.36 0.45  TikTok,  wh-0.02
+      86.38   86.50 0.49  make  wh-0.02
+      86.58   86.64 0.51  it
+      86.66   87.10 0.65  trend,  wh-0.04
+[pre2]   87.12-  89.92  I'll be over here hand-typing like it's twenty-ten again,
+      87.12   87.23 0.05  I'll  wh-0.22  LOWCONF
+      87.24   87.48 0.24  be  wh-0.02
+      87.50   87.72 0.71  over  wh-0.14
+      87.74   87.90 0.28  here  wh-0.10
+      87.92   88.44 0.54  hand-typing
+      88.46   88.58 0.49  like  wh-0.16
+      88.64   88.72 0.56  it's  wh-0.06
+      88.78   89.38 0.53  twenty-ten
+      89.40   89.92 0.53  again,  wh-0.32  <<<
+[pre2]   89.94-  92.48  It's slop, it's slop, it's a slop machine,
+      89.94   90.08 0.41  It's  wh-0.28  <<<
+      90.10   90.44 0.54  slop,  wh-0.02
+      90.66   90.80 0.33  it's  wh+0.02
+      90.82   91.18 0.58  slop,  wh+0.04
+      91.28   91.42 0.47  it's  wh-0.20
+      91.44   91.50 0.49  a  wh-0.04
+      91.52   91.82 0.61  slop  wh-0.04
+      91.90   92.48 0.53  machine,  wh-0.12
+[pre2]   92.60-  95.08  Watch it try to do the simplest thing!
+      92.60   92.82 0.50  Watch  wh-0.32  <<<
+      92.84   92.92 0.47  it  wh-0.10
+      92.94   93.14 0.45  try  wh-0.06
+      93.16   93.28 0.17  to  wh-0.06  LOWCONF
+      93.30   93.50 0.53  do  wh-0.06
+      93.52   93.62 0.49  the  wh-0.08
+      93.64   94.22 0.64  simplest  wh-0.04
+      94.34   95.08 0.31  thing!  wh-0.28  <<<
+[chorus2]   95.10-  97.48  It can't count the R's in strawberry,
+      95.10   95.16 0.47  It  wh-0.46  <<<
+      95.20   95.38 0.57  can't  wh-0.04
+      95.40   95.56 0.60  count  wh-0.02
+      95.58   95.88 0.52  the  wh-0.02
+      95.90   96.18 0.46  R's  wh-0.18
+      96.20   96.32 0.42  in  wh-0.06
+      96.34   97.48 0.23  strawberry,  wh-0.06
+[chorus2]   97.88- 100.38  It can't fill a glass of wine,
+      97.88   97.94 0.40  It  wh-1.02  <<<
+      97.98   98.14 0.36  can't  wh-0.04
+      98.18   98.40 0.48  fill  wh+0.00
+      98.42   98.50 0.38  a  wh-0.10
+      98.52   98.90 0.51  glass  wh-0.06
+      98.92   99.04 0.02  of  wh-0.10  LOWCONF
+      99.06  100.38 0.43  wine,  wh+0.00
+[chorus2]  100.68- 103.08  Every clock says ten past ten,
+     100.68  100.88 0.54  Every  wh-1.06  <<<
+     100.94  101.18 0.55  clock  wh-0.08
+     101.28  101.68 0.50  says  wh-0.12
+     101.96  102.28 0.65  ten  wh-0.32  <<<
+     102.34  102.64 0.51  past  wh-0.16
+     102.68  103.08 0.55  ten,  wh-0.08
+[chorus2]  103.20- 105.86  So I've got plenty of time!
+     103.20  103.54 0.69  So  wh-0.24
+     103.56  103.68 0.31  I've  wh-0.22
+     103.72  103.96 0.56  got  wh+0.00
+     104.04  104.86 0.33  plenty  wh-0.08
+     104.88  105.28 0.00  of  wh+0.04  LOWCONF
+     105.30  105.86 0.19  time!  wh-0.04  LOWCONF
+[chorus2]  105.88- 108.42  Six fingers waving hi at me,
+     105.88  106.10 0.17  Six  wh-0.34  <<<  LOWCONF
+     106.16  106.50 0.68  fingers  wh-0.14
+     106.52  106.88 0.38  waving  wh-0.06
+     106.90  107.27 0.23  hi
+     107.28  107.76 0.22  at  wh+0.00
+     107.90  108.42 0.25  me,  wh-0.10
+[chorus2]  108.44- 111.54  Nah, I'm not losing sleep,
+     108.44  109.06 0.25  Nah,  wh-0.22
+     109.08  109.30 0.49  I'm  wh-0.08
+     109.32  109.64 0.50  not  wh-0.08
+     109.66  110.58 0.43  losing  wh-0.12
+     110.60  111.54 0.66  sleep,  wh-0.36  <<<
+[chorus2]  111.96- 114.62  It's a toy, it's a joke, it's a party trick,
+     111.96  112.12 0.66  It's  wh-0.38  <<<
+     112.14  112.20 0.42  a  wh-0.06
+     112.22  112.66 0.55  toy,  wh-0.04
+     112.68  112.82 0.53  it's  wh+0.00
+     112.84  112.90 0.43  a  wh-0.04
+     112.92  113.34 0.61  joke,  wh-0.02
+     113.36  113.50 0.59  it's  wh-0.10
+     113.52  113.58 0.05  a  wh-0.02  LOWCONF
+     113.64  114.20 0.60  party  wh+0.00
+     114.26  114.62 0.56  trick,  wh-0.18
+[chorus2]  114.72- 118.66  And my job is mine to keep!
+     114.72  114.84 0.59  And  wh-0.20
+     114.86  115.06 0.51  my  wh-0.06
+     115.16  115.90 0.47  job  wh-0.08
+     116.30  116.58 0.61  is  wh-0.60  <<<
+     116.60  117.24 0.46  mine  wh-0.14
+     117.26  117.52 0.30  to  wh-0.22
+     117.56  118.66 0.14  keep!  wh-0.10  LOWCONF
+[breakdown]  129.08- 131.52  Monday morning, new ticket on the board,
+     129.08  129.78 0.70  Monday  wh-0.16
+     129.80  130.12 0.77  morning,  wh-0.32  <<<
+     130.16  130.42 0.61  new  wh+0.02
+     130.48  130.90 0.75  ticket  wh-0.16
+     130.94  131.00 0.66  on  wh-0.20
+     131.04  131.16 0.72  the  wh-0.04
+     131.20  131.52 0.50  board,  wh-0.06
+[breakdown]  131.56- 134.42  "Two weeks," I estimated, "maybe even more",
+     131.56  131.68 0.07  Two  wh-0.16  LOWCONF
+     131.72  132.16 0.46  weeks,  wh-0.04
+     132.20  132.28 0.47  I  wh-0.18
+     132.32  133.00 0.66  estimated,  wh-0.12
+     133.26  133.72 0.69  maybe  wh+0.02
+     133.74  133.94 0.85  even  wh-0.26  <<<
+     133.98  134.42 0.62  more",  wh-0.12
+[breakdown]  134.48- 137.02  Typed it in the prompt box, just to watch it choke,
+     134.48  134.90 0.15  Typed  wh-0.16  LOWCONF
+     134.94  135.10 0.31  it  wh-0.10
+     135.12  135.18 0.73  in  wh-0.08
+     135.20  135.30 0.91  the  wh+0.00
+     135.34  135.68 0.50  prompt  wh-0.04
+     135.72  136.02 0.56  box,  wh-0.10
+     136.06  136.20 0.63  just  wh-0.08
+     136.22  136.38 0.69  to  wh-0.04
+     136.40  136.60 0.73  watch  wh-0.06
+     136.64  136.70 0.46  it  wh-0.08
+     136.72  137.02 0.32  choke,
+[breakdown]  137.08- 140.04  Came back from my coffee to a masterstroke...
+     137.08  137.40 0.70  Came  wh-0.14
+     137.44  137.66 0.61  back  wh-0.18
+     137.76  137.94 0.51  from  wh-0.12
+     137.98  138.10 0.70  my  wh-0.06
+     138.14  138.46 0.46  coffee  wh-0.04
+     138.50  138.72 0.71  to  wh-0.10
+     138.76  138.84 0.46  a  wh-0.14
+     138.86  140.04 0.59  masterstroke...  wh-0.04
+[breakdown]  140.50- 141.24  Oh... duck!
+     140.50  140.74 0.25  Oh...  wh-0.62  <<<
+     140.96  141.24 0.51  duck!  wh-0.18
+[bridge]  142.72- 144.74  And lately... something's weird.
+     142.72  142.84 0.72  And  wh-1.50  <<<
+     142.88  143.38 0.67  lately...  wh-0.08
+     143.76  144.28 0.74  something's  wh-0.26  <<<
+     144.32  144.74 0.50  weird.  wh-0.04
+[bridge]  145.88- 147.70  Grandma's out of keys,
+     145.88  146.62 0.63  Grandma's  wh-0.22
+     146.76  146.90 0.50  out  wh-0.18
+     146.94  147.00 0.19  of  wh-0.12  LOWCONF
+     147.08  147.70 0.47  keys,  wh-0.08
+[bridge]  148.40- 151.22  My Tesla's driving me, hands-free,
+     148.40  148.66 0.50  My  wh+0.02
+     148.72  149.36 0.47  Tesla's  wh-0.14
+     149.42  150.00 0.58  driving  wh-0.06
+     150.02  150.30 0.75  me,  wh-0.16
+     150.34  151.22 0.65  hands-free,
+[bridge]  151.24- 154.18  The wine is dripping down on me...
+     151.24  151.38 0.63  The  wh+0.02
+     151.40  152.02 0.62  wine  wh-0.06
+     152.06  152.22 0.66  is  wh-0.28  <<<
+     152.24  152.96 0.67  dripping  wh-0.08
+     153.00  153.50 0.62  down  wh-0.34  <<<
+     153.52  153.66 0.50  on  wh-0.30  <<<
+     153.70  154.18 0.75  me...  wh-0.14
+[bridge]  154.74- 158.64  Will Smith eats spaghetti, smooth and slow,
+     154.74  154.94 0.68  Will  wh-0.34  <<<
+     155.02  155.36 0.70  Smith  wh-0.10
+     155.88  156.08 0.59  eats  wh-0.50  <<<
+     156.10  157.06 0.47  spaghetti,  wh-0.10
+     157.10  157.60 0.78  smooth  wh-0.36  <<<
+     157.64  157.78 0.54  and  wh-0.32  <<<
+     157.80  158.64 0.62  slow,  wh-0.08
+[bridge]  159.94- 162.46  And I can't tell it's fake...
+     159.94  160.10 0.61  And  wh-0.78  <<<
+     160.12  160.18 0.50  I  wh-0.10
+     160.22  160.58 0.67  can't  wh-0.04
+     161.02  161.40 0.49  tell  wh-0.38  <<<
+     161.72  161.96 0.48  it's  wh-0.36  <<<
+     162.08  162.46 0.61  fake...  wh-0.14
+[bridge]  164.04- 164.34  ...Oh no.
+     164.04  164.16 0.57  Oh  wh-0.84  <<<
+     164.20  164.34 0.47  no.  wh-0.08
+[final]  165.62- 168.12  Now it always finds the missing R,
+     165.62  165.88 0.71  Now  wh-1.32  <<<
+     165.90  166.00 0.50  it  wh-0.18
+     166.04  166.26 0.80  always  wh-0.08
+     166.30  166.64 0.75  finds  wh-0.08
+     166.68  166.92 0.39  the  wh-0.10
+     166.94  167.94 0.48  missing  wh-0.08
+     167.96  168.12 0.33  R,  wh-0.62  <<<
+[final]  168.42- 171.28  Now the wine drips down my spine,
+     168.42  168.56 0.60  Now  wh-0.44  <<<
+     168.60  168.72 0.51  the  wh-0.08
+     168.76  169.04 0.67  wine  wh-0.08
+     169.06  169.50 0.62  drips  wh-0.06
+     169.62  169.98 0.56  down  wh-0.16
+     170.00  170.18 0.50  my  wh-0.12
+     170.24  171.28 0.42  spine,  wh-0.08
+[final]  171.32- 173.94  Every clock is ticking fine,
+     171.32  171.50 0.57  Every  wh-0.62  <<<
+     171.54  171.84 0.69  clock  wh-0.08
+     172.12  172.32 0.41  is  wh-0.28  <<<
+     172.58  173.06 0.72  ticking  wh-0.28  <<<
+     173.12  173.94 0.33  fine,  wh-0.26  <<<
+[final]  173.98- 176.40  Counting down to my deadline!
+     173.98  174.64 0.38  Counting  wh-0.36  <<<
+     174.66  175.00 0.32  down  wh-0.10
+     175.04  175.22 0.54  to  wh-0.10
+     175.24  175.50 0.33  my  wh-0.10
+     175.54  176.40 0.17  deadline!  wh-0.08  LOWCONF
+[final]  176.42- 179.06  Five fingers waving bye to me,
+     176.42  176.75 0.14  Five  wh-0.30  <<<  LOWCONF
+     176.76  177.10 0.27  fingers  wh-0.04
+     177.14  177.44 0.20  waving  wh-0.06
+     177.48  178.04 0.24  bye  wh-0.12
+     178.06  178.50 0.21  to  wh-0.16
+     178.52  179.06 0.38  me,  wh-0.24
+[final]  179.10- 182.16  Now my job's not mine to keep...
+     179.10  179.34 0.37  Now  wh-0.34  <<<
+     179.38  179.52 0.43  my  wh-0.14
+     179.56  179.94 0.25  job's  wh-0.06
+     179.96  180.14 0.48  not  wh-0.06
+     180.26  180.88 0.43  mine  wh-0.12
+     180.94  181.22 0.46  to  wh-0.24
+     181.28  182.16 0.15  keep...  wh-0.14  LOWCONF
+[final]  182.20- 185.22  Fine! I'll be a plumber, gonna fix your sink,
+     182.20  182.56 0.54  Fine!  wh-0.50  <<<
+     182.60  182.72 0.12  I'll  wh-0.18  LOWCONF
+     182.76  182.92 0.26  be  wh-0.06
+     182.94  183.04 0.14  a  wh-0.08  LOWCONF
+     183.06  183.46 0.55  plumber,  wh-0.02
+     183.76  184.12 0.43  gonna  wh-0.22
+     184.42  184.64 0.66  fix  wh-0.44  <<<
+     184.66  184.88 0.69  your  wh-0.08
+     184.92  185.22 0.53  sink,  wh-0.10
+[final]  185.24- 191.62  AI can't hold a wrench, no matter what you think!
+     185.24  185.96 0.17  AI  wh+0.00  LOWCONF
+     186.00  186.20 0.57  can't  wh-0.28  <<<
+     186.22  186.42 0.55  hold  wh-0.02
+     186.44  186.50 0.25  a  wh-0.06
+     186.54  186.74 0.26  wrench,  wh+0.00
+     186.76  186.84 0.22  no  wh-0.08
+     186.88  187.22 0.21  matter  wh-0.02
+     187.26  187.48 0.59  what  wh-0.12
+     187.60  187.80 0.73  you  wh-0.12
+     187.90  191.62 0.54  think!  wh-0.14
+[robot]  194.54- 195.60  "You're absolutely right."
+     194.54  194.78 0.53  You're  wh-0.24
+     194.82  195.38 0.73  absolutely  wh-0.10
+     195.40  195.60 0.50  right.  wh-0.22
+[robot]  197.00- 200.24  "Move aside, human. I have a task to complete."
+     197.00  197.22 0.74  Move  wh-0.23
+     197.24  197.64 0.60  aside,  wh-0.08
+     198.40  198.84 0.70  human.  wh-0.38  <<<
+     198.86  198.94 0.50  I  wh-0.16
+     198.96  199.14 0.74  have  wh-0.06
+     199.16  199.21 0.50  a  wh-0.06
+     199.22  199.62 0.60  task  wh+0.00
+     199.72  199.80 0.99  to  wh-0.10
+     199.84  200.24 0.56  complete.  wh-0.04

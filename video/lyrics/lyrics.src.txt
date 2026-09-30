@@ -1,0 +1,90 @@
+# Lyric source for the aligner (from handoff.md). One sung line per row.
+# "## <section>" starts a section. Text in [brackets] is a non-word event (not aligned).
+# Keep the spelling the singer uses; the display text may differ (see align.py DISPLAY).
+
+## intro
+"AI will replace all programmers by next year."
+[laugh]
+Yeah. They said that last year too.
+
+## verse1
+I write my code by hand, every semicolon mine,
+Twenty years of tabs, never spaces - by design,
+They said "try the robot, bro", I said "show me the proof",
+Drew a hand with extra fingers - what a goof!
+Then the Fresh Prince got jiggy with a plate of spaghetti,
+Face melting in the sauce, fork flying like confetti,
+Told it "be my grandma", it read me Windows keys,
+Asked it what year it was - "twenty twenty-one, please!"
+
+## pre1
+So go ahead and hype it, call it genius, call it smart,
+I'll be over here hand-typing - it's a craft, it's an art!
+It's slop, it's slop, it's a slop machine,
+Watch it try to do the simplest thing!
+
+## chorus1
+It can't count the R's in strawberry,
+It can't fill a glass of wine,
+Every clock says ten past ten,
+So I've got plenty of time!
+Six fingers waving hi at me,
+Nah, I'm not losing sleep,
+It's a toy, it's a joke, it's a party trick,
+And my job is mine to keep!
+
+## verse2
+Asked for the Founding Fathers, got the Hamilton cast,
+Asked "misgender, or the apocalypse?" - it picked the blast!
+Then Grok dropped all its filters and veered the other way,
+Grew a funny little mustache - and that's all I'm gonna say.
+Drive-thru bot ignored my "stop!" - nuggets pouring down like rain,
+Took a Waymo to my flight - it circled like a plane!
+
+## pre2
+So go ahead and tweet it, make a TikTok, make it trend,
+I'll be over here hand-typing like it's twenty-ten again,
+It's slop, it's slop, it's a slop machine,
+Watch it try to do the simplest thing!
+
+## chorus2
+It can't count the R's in strawberry,
+It can't fill a glass of wine,
+Every clock says ten past ten,
+So I've got plenty of time!
+Six fingers waving hi at me,
+Nah, I'm not losing sleep,
+It's a toy, it's a joke, it's a party trick,
+And my job is mine to keep!
+
+## solo
+
+## breakdown
+Monday morning, new ticket on the board,
+"Two weeks," I estimated, "maybe even more",
+Typed it in the prompt box, just to watch it choke,
+Came back from my coffee to a masterstroke...
+Oh... duck!
+
+## bridge
+And lately... something's weird.
+Grandma's out of keys,
+My Tesla's driving me, hands-free,
+The wine is dripping down on me...
+Will Smith eats spaghetti, smooth and slow,
+And I can't tell it's fake...
+...Oh no.
+
+## final
+Now it always finds the missing R,
+Now the wine drips down my spine,
+Every clock is ticking fine,
+Counting down to my deadline!
+Five fingers waving bye to me,
+Now my job's not mine to keep...
+Fine! I'll be a plumber, gonna fix your sink,
+AI can't hold a wrench, no matter what you think!
+
+## robot
+"You're absolutely right."
+"Move aside, human. I have a task to complete."

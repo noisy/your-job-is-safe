@@ -1,0 +1,20 @@
+[project]
+name = "yjis-analysis"
+version = "0.1.0"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "torch>=2.2",
+  "torchaudio>=2.2",
+  "demucs>=4.0.1",
+  "librosa>=0.10",
+  "openai-whisper",
+  "mlx-whisper",
+  "numba",
+  "soxr",
+  "soundfile",
+  "numpy<2.3",
+  "scipy",
+  "matplotlib",
+  "fonttools",
+  "beat_this @ git+https://github.com/CPJKU/beat_this.git",
+]

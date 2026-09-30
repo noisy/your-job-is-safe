@@ -1,0 +1,3419 @@
+{
+ "lines": [
+  {
+   "section": "intro",
+   "text": "\"AI will replace all programmers by next year.\"",
+   "words": [
+    {
+     "w": "AI",
+     "start": 0.72,
+     "end": 1.02,
+     "conf": 0.064
+    },
+    {
+     "w": "will",
+     "start": 1.04,
+     "end": 1.22,
+     "conf": 0.843
+    },
+    {
+     "w": "replace",
+     "start": 1.24,
+     "end": 1.68,
+     "conf": 0.645
+    },
+    {
+     "w": "all",
+     "start": 1.78,
+     "end": 1.9,
+     "conf": 0.832
+    },
+    {
+     "w": "programmers",
+     "start": 1.96,
+     "end": 2.58,
+     "conf": 0.683
+    },
+    {
+     "w": "by",
+     "start": 2.62,
+     "end": 2.82,
+     "conf": 0.746
+    },
+    {
+     "w": "next",
+     "start": 2.84,
+     "end": 3.06,
+     "conf": 0.5
+    },
+    {
+     "w": "year.",
+     "start": 3.14,
+     "end": 3.4,
+     "conf": 0.626
+    }
+   ],
+   "start": 0.72,
+   "end": 3.4
+  },
+  {
+   "section": "intro",
+   "text": "Yeah. They said that last year too.",
+   "words": [
+    {
+     "w": "Yeah.",
+     "start": 5.8,
+     "end": 6.08,
+     "conf": 0.269
+    },
+    {
+     "w": "They",
+     "start": 6.62,
+     "end": 6.76,
+     "conf": 0.496
+    },
+    {
+     "w": "said",
+     "start": 6.78,
+     "end": 6.92,
+     "conf": 0.706
+    },
+    {
+     "w": "that",
+     "start": 6.96,
+     "end": 7.1,
+     "conf": 0.719
+    },
+    {
+     "w": "last",
+     "start": 7.12,
+     "end": 7.36,
+     "conf": 0.508
+    },
+    {
+     "w": "year",
+     "start": 7.42,
+     "end": 7.58,
+     "conf": 0.788
+    },
+    {
+     "w": "too.",
+     "start": 7.64,
+     "end": 7.9,
+     "conf": 0.652
+    }
+   ],
+   "start": 5.8,
+   "end": 7.9
+  },
+  {
+   "section": "verse1",
+   "text": "I write my code by hand, every semicolon mine,",
+   "words": [
+    {
+     "w": "I",
+     "start": 9.08,
+     "end": 9.2,
+     "conf": 0.499
+    },
+    {
+     "w": "write",
+     "start": 9.22,
+     "end": 9.38,
+     "conf": 0.576
+    },
+    {
+     "w": "my",
+     "start": 9.4,
+     "end": 9.52,
+     "conf": 0.737
+    },
+    {
+     "w": "code",
+     "start": 9.56,
+     "end": 9.84,
+     "conf": 0.328
+    },
+    {
+     "w": "by",
+     "start": 9.92,
+     "end": 10.26,
+     "conf": 0.504
+    },
+    {
+     "w": "hand,",
+     "start": 10.28,
+     "end": 10.66,
+     "conf": 0.72
+    },
+    {
+     "w": "every",
+     "start": 10.68,
+     "end": 10.92,
+     "conf": 0.894
+    },
+    {
+     "w": "semicolon",
+     "start": 10.94,
+     "end": 11.62,
+     "conf": 0.62
+    },
+    {
+     "w": "mine,",
+     "start": 11.64,
+     "end": 11.94,
+     "conf": 0.604
+    }
+   ],
+   "start": 9.08,
+   "end": 11.94
+  },
+  {
+   "section": "verse1",
+   "text": "Twenty years of tabs, never spaces - by design,",
+   "words": [
+    {
+     "w": "Twenty",
+     "start": 11.98,
+     "end": 12.32,
+     "conf": 0.581
+    },
+    {
+     "w": "years",
+     "start": 12.34,
+     "end": 12.58,
+     "conf": 0.64
+    },
+    {
+     "w": "of",
+     "start": 12.6,
+     "end": 12.63,
+     "conf": 0.059
+    },
+    {
+     "w": "tabs,",
+     "start": 12.64,
+     "end": 13.06,
+     "conf": 0.418
+    },
+    {
+     "w": "never",
+     "start": 13.08,
+     "end": 13.3,
+     "conf": 0.996
+    },
+    {
+     "w": "spaces",
+     "start": 13.32,
+     "end": 13.7,
+     "conf": 0.745
+    },
+    {
+     "w": "by",
+     "start": 13.74,
+     "end": 14.06,
+     "conf": 0.488
+    },
+    {
+     "w": "design,",
+     "start": 14.08,
+     "end": 14.58,
+     "conf": 0.322
+    }
+   ],
+   "start": 11.98,
+   "end": 14.58
+  },
+  {
+   "section": "verse1",
+   "text": "They said \"try the robot, bro\", I said \"show me the proof\",",
+   "words": [
+    {
+     "w": "They",
+     "start": 14.6,
+     "end": 14.74,
+     "conf": 0.37
+    },
+    {
+     "w": "said",
+     "start": 14.76,
+     "end": 14.98,
+     "conf": 0.624
+    },
+    {
+     "w": "try",
+     "start": 15.06,
+     "end": 15.28,
+     "conf": 0.622
+    },
+    {
+     "w": "the",
+     "start": 15.3,
+     "end": 15.44,
+     "conf": 0.452
+    },
+    {
+     "w": "robot,",
+     "start": 15.46,
+     "end": 15.78,
+     "conf": 0.36
+    },
+    {
+     "w": "bro\",",
+     "start": 15.82,
+     "end": 16.12,
+     "conf": 0.777
+    },
+    {
+     "w": "I",
+     "start": 16.18,
+     "end": 16.26,
+     "conf": 0.494
+    },
+    {
+     "w": "said",
+     "start": 16.28,
+     "end": 16.46,
+     "conf": 0.56
+    },
+    {
+     "w": "show",
+     "start": 16.48,
+     "end": 16.68,
+     "conf": 0.742
+    },
+    {
+     "w": "me",
+     "start": 16.7,
+     "end": 16.82,
+     "conf": 0.735
+    },
+    {
+     "w": "the",
+     "start": 16.86,
+     "end": 16.92,
+     "conf": 0.664
+    },
+    {
+     "w": "proof\",",
+     "start": 17.0,
+     "end": 17.3,
+     "conf": 0.887
+    }
+   ],
+   "start": 14.6,
+   "end": 17.3
+  },
+  {
+   "section": "verse1",
+   "text": "Drew a hand with extra fingers - what a goof!",
+   "words": [
+    {
+     "w": "Drew",
+     "start": 17.54,
+     "end": 17.76,
+     "conf": 0.335
+    },
+    {
+     "w": "a",
+     "start": 17.78,
+     "end": 17.86,
+     "conf": 0.428
+    },
+    {
+     "w": "hand",
+     "start": 17.88,
+     "end": 18.08,
+     "conf": 0.52
+    },
+    {
+     "w": "with",
+     "start": 18.1,
+     "end": 18.22,
+     "conf": 0.798
+    },
+    {
+     "w": "extra",
+     "start": 18.28,
+     "end": 18.5,
+     "conf": 0.758
+    },
+    {
+     "w": "fingers",
+     "start": 18.6,
+     "end": 19.06,
+     "conf": 0.642
+    },
+    {
+     "w": "what",
+     "start": 19.28,
+     "end": 19.46,
+     "conf": 0.512
+    },
+    {
+     "w": "a",
+     "start": 19.66,
+     "end": 19.8,
+     "conf": 0.81
+    },
+    {
+     "w": "goof!",
+     "start": 19.82,
+     "end": 20.08,
+     "conf": 0.613
+    }
+   ],
+   "start": 17.54,
+   "end": 20.08
+  },
+  {
+   "section": "verse1",
+   "text": "Then the Fresh Prince got jiggy with a plate of spaghetti,",
+   "words": [
+    {
+     "w": "Then",
+     "start": 20.12,
+     "end": 20.3,
+     "conf": 0.338
+    },
+    {
+     "w": "the",
+     "start": 20.32,
+     "end": 20.4,
+     "conf": 0.348
+    },
+    {
+     "w": "Fresh",
+     "start": 20.48,
+     "end": 20.64,
+     "conf": 0.391
+    },
+    {
+     "w": "Prince",
+     "start": 20.68,
+     "end": 20.98,
+     "conf": 0.451
+    },
+    {
+     "w": "got",
+     "start": 21.02,
+     "end": 21.24,
+     "conf": 0.525
+    },
+    {
+     "w": "jiggy",
+     "start": 21.32,
+     "end": 21.72,
+     "conf": 0.44
+    },
+    {
+     "w": "with",
+     "start": 21.74,
+     "end": 21.93,
+     "conf": 0.847
+    },
+    {
+     "w": "a",
+     "start": 21.94,
+     "end": 22.0,
+     "conf": 0.052
+    },
+    {
+     "w": "plate",
+     "start": 22.04,
+     "end": 22.26,
+     "conf": 0.587
+    },
+    {
+     "w": "of",
+     "start": 22.28,
+     "end": 22.31,
+     "conf": 0.119
+    },
+    {
+     "w": "spaghetti,",
+     "start": 22.32,
+     "end": 22.9,
+     "conf": 0.462
+    }
+   ],
+   "start": 20.12,
+   "end": 22.9
+  },
+  {
+   "section": "verse1",
+   "text": "Face melting in the sauce, fork flying like confetti,",
+   "words": [
+    {
+     "w": "Face",
+     "start": 23.1,
+     "end": 23.42,
+     "conf": 0.582
+    },
+    {
+     "w": "melting",
+     "start": 23.44,
+     "end": 23.82,
+     "conf": 0.489
+    },
+    {
+     "w": "in",
+     "start": 23.84,
+     "end": 23.92,
+     "conf": 0.685
+    },
+    {
+     "w": "the",
+     "start": 23.94,
+     "end": 24.08,
+     "conf": 0.24
+    },
+    {
+     "w": "sauce,",
+     "start": 24.1,
+     "end": 24.44,
+     "conf": 0.449
+    },
+    {
+     "w": "fork",
+     "start": 24.48,
+     "end": 24.74,
+     "conf": 0.597
+    },
+    {
+     "w": "flying",
+     "start": 24.8,
+     "end": 25.16,
+     "conf": 0.564
+    },
+    {
+     "w": "like",
+     "start": 25.18,
+     "end": 25.32,
+     "conf": 0.46
+    },
+    {
+     "w": "confetti,",
+     "start": 25.36,
+     "end": 25.84,
+     "conf": 0.491
+    }
+   ],
+   "start": 23.1,
+   "end": 25.84
+  },
+  {
+   "section": "verse1",
+   "text": "Told it \"be my grandma\", it read me Windows keys,",
+   "words": [
+    {
+     "w": "Told",
+     "start": 25.88,
+     "end": 26.1,
+     "conf": 0.586
+    },
+    {
+     "w": "it",
+     "start": 26.12,
+     "end": 26.2,
+     "conf": 0.803
+    },
+    {
+     "w": "be",
+     "start": 26.24,
+     "end": 26.38,
+     "conf": 0.459
+    },
+    {
+     "w": "my",
+     "start": 26.4,
+     "end": 26.54,
+     "conf": 0.48
+    },
+    {
+     "w": "grandma\",",
+     "start": 26.6,
+     "end": 27.16,
+     "conf": 0.679
+    },
+    {
+     "w": "it",
+     "start": 27.18,
+     "end": 27.24,
+     "conf": 0.499
+    },
+    {
+     "w": "read",
+     "start": 27.28,
+     "end": 27.42,
+     "conf": 0.707
+    },
+    {
+     "w": "me",
+     "start": 27.48,
+     "end": 27.6,
+     "conf": 0.707
+    },
+    {
+     "w": "Windows",
+     "start": 27.62,
+     "end": 28.08,
+     "conf": 0.645
+    },
+    {
+     "w": "keys,",
+     "start": 28.12,
+     "end": 28.54,
+     "conf": 0.382
+    }
+   ],
+   "start": 25.88,
+   "end": 28.54
+  },
+  {
+   "section": "verse1",
+   "text": "Asked it what year it was - \"twenty twenty-one, please!\"",
+   "words": [
+    {
+     "w": "Asked",
+     "start": 28.56,
+     "end": 28.72,
+     "conf": 0.247
+    },
+    {
+     "w": "it",
+     "start": 28.74,
+     "end": 28.8,
+     "conf": 0.209
+    },
+    {
+     "w": "what",
+     "start": 28.84,
+     "end": 28.96,
+     "conf": 0.702
+    },
+    {
+     "w": "year",
+     "start": 29.02,
+     "end": 29.24,
+     "conf": 0.464
+    },
+    {
+     "w": "it",
+     "start": 29.26,
+     "end": 29.32,
+     "conf": 0.498
+    },
+    {
+     "w": "was",
+     "start": 29.38,
+     "end": 29.66,
+     "conf": 0.657
+    },
+    {
+     "w": "twenty",
+     "start": 29.68,
+     "end": 29.98,
+     "conf": 0.517
+    },
+    {
+     "w": "twenty-one,",
+     "start": 30.04,
+     "end": 30.8,
+     "conf": 0.505
+    },
+    {
+     "w": "please!",
+     "start": 30.86,
+     "end": 31.42,
+     "conf": 0.525
+    }
+   ],
+   "start": 28.56,
+   "end": 31.42
+  },
+  {
+   "section": "pre1",
+   "text": "So go ahead and hype it, call it genius, call it smart,",
+   "words": [
+    {
+     "w": "So",
+     "start": 31.6,
+     "end": 31.76,
+     "conf": 0.368
+    },
+    {
+     "w": "go",
+     "start": 31.78,
+     "end": 32.04,
+     "conf": 0.51
+    },
+    {
+     "w": "ahead",
+     "start": 32.06,
+     "end": 32.36,
+     "conf": 0.478
+    },
+    {
+     "w": "and",
+     "start": 32.38,
+     "end": 32.46,
+     "conf": 0.12
+    },
+    {
+     "w": "hype",
+     "start": 32.5,
+     "end": 32.71,
+     "conf": 0.3
+    },
+    {
+     "w": "it,",
+     "start": 32.72,
+     "end": 32.78,
+     "conf": 0.115
+    },
+    {
+     "w": "call",
+     "start": 32.84,
+     "end": 33.04,
+     "conf": 0.452
+    },
+    {
+     "w": "it",
+     "start": 33.06,
+     "end": 33.14,
+     "conf": 0.164
+    },
+    {
+     "w": "genius,",
+     "start": 33.18,
+     "end": 33.5,
+     "conf": 0.579
+    },
+    {
+     "w": "call",
+     "start": 33.52,
+     "end": 33.72,
+     "conf": 0.593
+    },
+    {
+     "w": "it",
+     "start": 33.74,
+     "end": 33.82,
+     "conf": 0.545
+    },
+    {
+     "w": "smart,",
+     "start": 33.84,
+     "end": 34.1,
+     "conf": 0.481
+    }
+   ],
+   "start": 31.6,
+   "end": 34.1
+  },
+  {
+   "section": "pre1",
+   "text": "I'll be over here hand-typing - it's a craft, it's an art!",
+   "words": [
+    {
+     "w": "I'll",
+     "start": 34.28,
+     "end": 34.4,
+     "conf": 0.442
+    },
+    {
+     "w": "be",
+     "start": 34.42,
+     "end": 34.6,
+     "conf": 0.45
+    },
+    {
+     "w": "over",
+     "start": 34.64,
+     "end": 34.92,
+     "conf": 0.402
+    },
+    {
+     "w": "here",
+     "start": 34.96,
+     "end": 35.08,
+     "conf": 0.133
+    },
+    {
+     "w": "hand-typing",
+     "start": 35.1,
+     "end": 35.68,
+     "conf": 0.441
+    },
+    {
+     "w": "it's",
+     "start": 35.7,
+     "end": 35.82,
+     "conf": 0.464
+    },
+    {
+     "w": "a",
+     "start": 35.84,
+     "end": 35.9,
+     "conf": 0.28
+    },
+    {
+     "w": "craft,",
+     "start": 35.92,
+     "end": 36.28,
+     "conf": 0.539
+    },
+    {
+     "w": "it's",
+     "start": 36.36,
+     "end": 36.54,
+     "conf": 0.505
+    },
+    {
+     "w": "an",
+     "start": 36.58,
+     "end": 36.82,
+     "conf": 0.286
+    },
+    {
+     "w": "art!",
+     "start": 36.86,
+     "end": 37.06,
+     "conf": 0.489
+    }
+   ],
+   "start": 34.28,
+   "end": 37.06
+  },
+  {
+   "section": "pre1",
+   "text": "It's slop, it's slop, it's a slop machine,",
+   "words": [
+    {
+     "w": "It's",
+     "start": 37.1,
+     "end": 37.22,
+     "conf": 0.28
+    },
+    {
+     "w": "slop,",
+     "start": 37.26,
+     "end": 37.6,
+     "conf": 0.441
+    },
+    {
+     "w": "it's",
+     "start": 37.8,
+     "end": 37.94,
+     "conf": 0.383
+    },
+    {
+     "w": "slop,",
+     "start": 37.98,
+     "end": 38.32,
+     "conf": 0.466
+    },
+    {
+     "w": "it's",
+     "start": 38.44,
+     "end": 38.56,
+     "conf": 0.532
+    },
+    {
+     "w": "a",
+     "start": 38.6,
+     "end": 38.66,
+     "conf": 0.497
+    },
+    {
+     "w": "slop",
+     "start": 38.68,
+     "end": 38.98,
+     "conf": 0.48
+    },
+    {
+     "w": "machine,",
+     "start": 39.06,
+     "end": 39.72,
+     "conf": 0.582
+    }
+   ],
+   "start": 37.1,
+   "end": 39.72
+  },
+  {
+   "section": "pre1",
+   "text": "Watch it try to do the simplest thing!",
+   "words": [
+    {
+     "w": "Watch",
+     "start": 39.76,
+     "end": 39.96,
+     "conf": 0.498
+    },
+    {
+     "w": "it",
+     "start": 40.0,
+     "end": 40.06,
+     "conf": 0.132
+    },
+    {
+     "w": "try",
+     "start": 40.1,
+     "end": 40.28,
+     "conf": 0.599
+    },
+    {
+     "w": "to",
+     "start": 40.32,
+     "end": 40.44,
+     "conf": 0.171
+    },
+    {
+     "w": "do",
+     "start": 40.48,
+     "end": 40.64,
+     "conf": 0.579
+    },
+    {
+     "w": "the",
+     "start": 40.68,
+     "end": 40.76,
+     "conf": 0.464
+    },
+    {
+     "w": "simplest",
+     "start": 40.8,
+     "end": 41.4,
+     "conf": 0.509
+    },
+    {
+     "w": "thing!",
+     "start": 41.46,
+     "end": 42.26,
+     "conf": 0.13
+    }
+   ],
+   "start": 39.76,
+   "end": 42.26
+  },
+  {
+   "section": "chorus1",
+   "text": "It can't count the R's in strawberry,",
+   "words": [
+    {
+     "w": "It",
+     "start": 42.28,
+     "end": 42.34,
+     "conf": 0.291
+    },
+    {
+     "w": "can't",
+     "start": 42.36,
+     "end": 42.52,
+     "conf": 0.559
+    },
+    {
+     "w": "count",
+     "start": 42.56,
+     "end": 42.72,
+     "conf": 0.523
+    },
+    {
+     "w": "the",
+     "start": 42.76,
+     "end": 43.08,
+     "conf": 0.529
+    },
+    {
+     "w": "R's",
+     "start": 43.1,
+     "end": 43.32,
+     "conf": 0.491
+    },
+    {
+     "w": "in",
+     "start": 43.34,
+     "end": 43.5,
+     "conf": 0.558
+    },
+    {
+     "w": "strawberry,",
+     "start": 43.54,
+     "end": 44.68,
+     "conf": 0.636
+    }
+   ],
+   "start": 42.28,
+   "end": 44.68
+  },
+  {
+   "section": "chorus1",
+   "text": "It can't fill a glass of wine,",
+   "words": [
+    {
+     "w": "It",
+     "start": 45.04,
+     "end": 45.1,
+     "conf": 0.302
+    },
+    {
+     "w": "can't",
+     "start": 45.14,
+     "end": 45.32,
+     "conf": 0.614
+    },
+    {
+     "w": "fill",
+     "start": 45.36,
+     "end": 45.54,
+     "conf": 0.61
+    },
+    {
+     "w": "a",
+     "start": 45.58,
+     "end": 45.64,
+     "conf": 0.283
+    },
+    {
+     "w": "glass",
+     "start": 45.68,
+     "end": 46.02,
+     "conf": 0.483
+    },
+    {
+     "w": "of",
+     "start": 46.12,
+     "end": 46.22,
+     "conf": 0.07
+    },
+    {
+     "w": "wine,",
+     "start": 46.24,
+     "end": 47.54,
+     "conf": 0.185
+    }
+   ],
+   "start": 45.04,
+   "end": 47.54
+  },
+  {
+   "section": "chorus1",
+   "text": "Every clock says ten past ten,",
+   "words": [
+    {
+     "w": "Every",
+     "start": 47.86,
+     "end": 48.06,
+     "conf": 0.588
+    },
+    {
+     "w": "clock",
+     "start": 48.1,
+     "end": 48.44,
+     "conf": 0.581
+    },
+    {
+     "w": "says",
+     "start": 48.46,
+     "end": 48.86,
+     "conf": 0.603
+    },
+    {
+     "w": "ten",
+     "start": 49.14,
+     "end": 49.48,
+     "conf": 0.81
+    },
+    {
+     "w": "past",
+     "start": 49.5,
+     "end": 49.8,
+     "conf": 0.556
+    },
+    {
+     "w": "ten,",
+     "start": 49.86,
+     "end": 50.28,
+     "conf": 0.639
+    }
+   ],
+   "start": 47.86,
+   "end": 50.28
+  },
+  {
+   "section": "chorus1",
+   "text": "So I've got plenty of time!",
+   "words": [
+    {
+     "w": "So",
+     "start": 50.38,
+     "end": 50.68,
+     "conf": 0.728
+    },
+    {
+     "w": "I've",
+     "start": 50.7,
+     "end": 50.84,
+     "conf": 0.495
+    },
+    {
+     "w": "got",
+     "start": 50.9,
+     "end": 51.14,
+     "conf": 0.75
+    },
+    {
+     "w": "plenty",
+     "start": 51.22,
+     "end": 52.32,
+     "conf": 0.363
+    },
+    {
+     "w": "of",
+     "start": 52.36,
+     "end": 52.42,
+     "conf": 0.001
+    },
+    {
+     "w": "time!",
+     "start": 52.46,
+     "end": 52.94,
+     "conf": 0.491
+    }
+   ],
+   "start": 50.38,
+   "end": 52.94
+  },
+  {
+   "section": "chorus1",
+   "text": "Six fingers waving hi at me,",
+   "words": [
+    {
+     "w": "Six",
+     "start": 52.98,
+     "end": 53.24,
+     "conf": 0.529
+    },
+    {
+     "w": "fingers",
+     "start": 53.32,
+     "end": 53.66,
+     "conf": 0.645
+    },
+    {
+     "w": "waving",
+     "start": 53.68,
+     "end": 54.04,
+     "conf": 0.215
+    },
+    {
+     "w": "hi",
+     "start": 54.06,
+     "end": 54.8,
+     "conf": 0.195
+    },
+    {
+     "w": "at",
+     "start": 54.82,
+     "end": 54.92,
+     "conf": 0.197
+    },
+    {
+     "w": "me,",
+     "start": 55.06,
+     "end": 55.58,
+     "conf": 0.389
+    }
+   ],
+   "start": 52.98,
+   "end": 55.58
+  },
+  {
+   "section": "chorus1",
+   "text": "Nah, I'm not losing sleep,",
+   "words": [
+    {
+     "w": "Nah,",
+     "start": 55.6,
+     "end": 56.18,
+     "conf": 0.177
+    },
+    {
+     "w": "I'm",
+     "start": 56.22,
+     "end": 56.44,
+     "conf": 0.475
+    },
+    {
+     "w": "not",
+     "start": 56.48,
+     "end": 56.8,
+     "conf": 0.468
+    },
+    {
+     "w": "losing",
+     "start": 56.82,
+     "end": 57.72,
+     "conf": 0.395
+    },
+    {
+     "w": "sleep,",
+     "start": 57.76,
+     "end": 58.72,
+     "conf": 0.534
+    }
+   ],
+   "start": 55.6,
+   "end": 58.72
+  },
+  {
+   "section": "chorus1",
+   "text": "It's a toy, it's a joke, it's a party trick,",
+   "words": [
+    {
+     "w": "It's",
+     "start": 59.12,
+     "end": 59.26,
+     "conf": 0.495
+    },
+    {
+     "w": "a",
+     "start": 59.3,
+     "end": 59.36,
+     "conf": 0.412
+    },
+    {
+     "w": "toy,",
+     "start": 59.38,
+     "end": 59.82,
+     "conf": 0.667
+    },
+    {
+     "w": "it's",
+     "start": 59.84,
+     "end": 59.98,
+     "conf": 0.567
+    },
+    {
+     "w": "a",
+     "start": 60.0,
+     "end": 60.08,
+     "conf": 0.261
+    },
+    {
+     "w": "joke,",
+     "start": 60.1,
+     "end": 60.46,
+     "conf": 0.507
+    },
+    {
+     "w": "it's",
+     "start": 60.54,
+     "end": 60.68,
+     "conf": 0.488
+    },
+    {
+     "w": "a",
+     "start": 60.7,
+     "end": 60.76,
+     "conf": 0.235
+    },
+    {
+     "w": "party",
+     "start": 60.8,
+     "end": 61.38,
+     "conf": 0.503
+    },
+    {
+     "w": "trick,",
+     "start": 61.46,
+     "end": 61.78,
+     "conf": 0.511
+    }
+   ],
+   "start": 59.12,
+   "end": 61.78
+  },
+  {
+   "section": "chorus1",
+   "text": "And my job is mine to keep!",
+   "words": [
+    {
+     "w": "And",
+     "start": 61.88,
+     "end": 62.0,
+     "conf": 0.092
+    },
+    {
+     "w": "my",
+     "start": 62.02,
+     "end": 62.22,
+     "conf": 0.389
+    },
+    {
+     "w": "job",
+     "start": 62.32,
+     "end": 63.06,
+     "conf": 0.248
+    },
+    {
+     "w": "is",
+     "start": 63.5,
+     "end": 63.72,
+     "conf": 0.495
+    },
+    {
+     "w": "mine",
+     "start": 63.76,
+     "end": 64.44,
+     "conf": 0.532
+    },
+    {
+     "w": "to",
+     "start": 64.46,
+     "end": 64.6,
+     "conf": 0.503
+    },
+    {
+     "w": "keep!",
+     "start": 64.74,
+     "end": 65.1,
+     "conf": 0.514
+    }
+   ],
+   "start": 61.88,
+   "end": 65.1
+  },
+  {
+   "section": "verse2",
+   "text": "Asked for the Founding Fathers, got the Hamilton cast,",
+   "words": [
+    {
+     "w": "Asked",
+     "start": 67.16,
+     "end": 67.59,
+     "conf": 0.107
+    },
+    {
+     "w": "for",
+     "start": 67.6,
+     "end": 67.74,
+     "conf": 0.477
+    },
+    {
+     "w": "the",
+     "start": 67.8,
+     "end": 67.9,
+     "conf": 0.453
+    },
+    {
+     "w": "Founding",
+     "start": 67.94,
+     "end": 68.26,
+     "conf": 0.59
+    },
+    {
+     "w": "Fathers,",
+     "start": 68.28,
+     "end": 68.78,
+     "conf": 0.751
+    },
+    {
+     "w": "got",
+     "start": 69.0,
+     "end": 69.1,
+     "conf": 0.259
+    },
+    {
+     "w": "the",
+     "start": 69.14,
+     "end": 69.32,
+     "conf": 0.674
+    },
+    {
+     "w": "Hamilton",
+     "start": 69.34,
+     "end": 69.82,
+     "conf": 0.526
+    },
+    {
+     "w": "cast,",
+     "start": 69.84,
+     "end": 70.26,
+     "conf": 0.652
+    }
+   ],
+   "start": 67.16,
+   "end": 70.26
+  },
+  {
+   "section": "verse2",
+   "text": "Asked \"misgender, or the apocalypse?\" - it picked the blast!",
+   "words": [
+    {
+     "w": "Asked",
+     "start": 70.28,
+     "end": 70.5,
+     "conf": 0.176
+    },
+    {
+     "w": "misgender,",
+     "start": 70.52,
+     "end": 71.06,
+     "conf": 0.736
+    },
+    {
+     "w": "or",
+     "start": 71.08,
+     "end": 71.16,
+     "conf": 0.645
+    },
+    {
+     "w": "the",
+     "start": 71.2,
+     "end": 71.28,
+     "conf": 0.474
+    },
+    {
+     "w": "apocalypse?",
+     "start": 71.3,
+     "end": 71.96,
+     "conf": 0.408
+    },
+    {
+     "w": "it",
+     "start": 71.98,
+     "end": 72.06,
+     "conf": 0.11
+    },
+    {
+     "w": "picked",
+     "start": 72.12,
+     "end": 72.4,
+     "conf": 0.563
+    },
+    {
+     "w": "the",
+     "start": 72.46,
+     "end": 72.6,
+     "conf": 0.653
+    },
+    {
+     "w": "blast!",
+     "start": 72.62,
+     "end": 72.94,
+     "conf": 0.432
+    }
+   ],
+   "start": 70.28,
+   "end": 72.94
+  },
+  {
+   "section": "verse2",
+   "text": "Then Grok dropped all its filters and veered the other way,",
+   "words": [
+    {
+     "w": "Then",
+     "start": 72.96,
+     "end": 73.12,
+     "conf": 0.248
+    },
+    {
+     "w": "Grok",
+     "start": 73.14,
+     "end": 73.38,
+     "conf": 0.622
+    },
+    {
+     "w": "dropped",
+     "start": 73.46,
+     "end": 73.88,
+     "conf": 0.237
+    },
+    {
+     "w": "all",
+     "start": 73.9,
+     "end": 74.04,
+     "conf": 0.957
+    },
+    {
+     "w": "its",
+     "start": 74.06,
+     "end": 74.16,
+     "conf": 0.659
+    },
+    {
+     "w": "filters",
+     "start": 74.18,
+     "end": 74.56,
+     "conf": 0.695
+    },
+    {
+     "w": "and",
+     "start": 74.58,
+     "end": 74.7,
+     "conf": 0.656
+    },
+    {
+     "w": "veered",
+     "start": 74.72,
+     "end": 75.04,
+     "conf": 0.415
+    },
+    {
+     "w": "the",
+     "start": 75.06,
+     "end": 75.34,
+     "conf": 0.775
+    },
+    {
+     "w": "other",
+     "start": 75.36,
+     "end": 75.56,
+     "conf": 0.89
+    },
+    {
+     "w": "way,",
+     "start": 75.58,
+     "end": 75.9,
+     "conf": 0.671
+    }
+   ],
+   "start": 72.96,
+   "end": 75.9
+  },
+  {
+   "section": "verse2",
+   "text": "Grew a funny little mustache - and that's all I'm gonna say.",
+   "words": [
+    {
+     "w": "Grew",
+     "start": 75.92,
+     "end": 76.12,
+     "conf": 0.5
+    },
+    {
+     "w": "a",
+     "start": 76.14,
+     "end": 76.2,
+     "conf": 0.447
+    },
+    {
+     "w": "funny",
+     "start": 76.26,
+     "end": 76.62,
+     "conf": 0.577
+    },
+    {
+     "w": "little",
+     "start": 76.64,
+     "end": 76.94,
+     "conf": 0.628
+    },
+    {
+     "w": "mustache",
+     "start": 76.96,
+     "end": 77.38,
+     "conf": 0.699
+    },
+    {
+     "w": "and",
+     "start": 77.4,
+     "end": 77.48,
+     "conf": 0.349
+    },
+    {
+     "w": "that's",
+     "start": 77.5,
+     "end": 77.72,
+     "conf": 0.558
+    },
+    {
+     "w": "all",
+     "start": 77.74,
+     "end": 77.88,
+     "conf": 0.816
+    },
+    {
+     "w": "I'm",
+     "start": 77.9,
+     "end": 78.04,
+     "conf": 0.595
+    },
+    {
+     "w": "gonna",
+     "start": 78.06,
+     "end": 78.34,
+     "conf": 0.504
+    },
+    {
+     "w": "say.",
+     "start": 78.36,
+     "end": 78.68,
+     "conf": 0.649
+    }
+   ],
+   "start": 75.92,
+   "end": 78.68
+  },
+  {
+   "section": "verse2",
+   "text": "Drive-thru bot ignored my \"stop!\" - nuggets pouring down like rain,",
+   "words": [
+    {
+     "w": "Drive-thru",
+     "start": 78.7,
+     "end": 79.04,
+     "conf": 0.339
+    },
+    {
+     "w": "bot",
+     "start": 79.06,
+     "end": 79.26,
+     "conf": 0.369
+    },
+    {
+     "w": "ignored",
+     "start": 79.28,
+     "end": 79.58,
+     "conf": 0.346
+    },
+    {
+     "w": "my",
+     "start": 79.6,
+     "end": 79.7,
+     "conf": 0.491
+    },
+    {
+     "w": "stop!",
+     "start": 79.72,
+     "end": 79.96,
+     "conf": 0.829
+    },
+    {
+     "w": "nuggets",
+     "start": 80.1,
+     "end": 80.4,
+     "conf": 0.659
+    },
+    {
+     "w": "pouring",
+     "start": 80.44,
+     "end": 80.78,
+     "conf": 0.666
+    },
+    {
+     "w": "down",
+     "start": 80.8,
+     "end": 80.96,
+     "conf": 0.698
+    },
+    {
+     "w": "like",
+     "start": 80.98,
+     "end": 81.16,
+     "conf": 0.696
+    },
+    {
+     "w": "rain,",
+     "start": 81.18,
+     "end": 81.46,
+     "conf": 0.582
+    }
+   ],
+   "start": 78.7,
+   "end": 81.46
+  },
+  {
+   "section": "verse2",
+   "text": "Took a Waymo to my flight - it circled like a plane!",
+   "words": [
+    {
+     "w": "Took",
+     "start": 81.48,
+     "end": 81.64,
+     "conf": 0.359
+    },
+    {
+     "w": "a",
+     "start": 81.7,
+     "end": 81.82,
+     "conf": 0.293
+    },
+    {
+     "w": "Waymo",
+     "start": 81.84,
+     "end": 82.16,
+     "conf": 0.443
+    },
+    {
+     "w": "to",
+     "start": 82.18,
+     "end": 82.34,
+     "conf": 0.573
+    },
+    {
+     "w": "my",
+     "start": 82.36,
+     "end": 82.48,
+     "conf": 0.5
+    },
+    {
+     "w": "flight",
+     "start": 82.52,
+     "end": 82.82,
+     "conf": 0.659
+    },
+    {
+     "w": "it",
+     "start": 83.08,
+     "end": 83.18,
+     "conf": 0.951
+    },
+    {
+     "w": "circled",
+     "start": 83.2,
+     "end": 83.6,
+     "conf": 0.713
+    },
+    {
+     "w": "like",
+     "start": 83.62,
+     "end": 83.74,
+     "conf": 0.623
+    },
+    {
+     "w": "a",
+     "start": 83.8,
+     "end": 83.86,
+     "conf": 0.935
+    },
+    {
+     "w": "plane!",
+     "start": 83.9,
+     "end": 84.4,
+     "conf": 0.575
+    }
+   ],
+   "start": 81.48,
+   "end": 84.4
+  },
+  {
+   "section": "pre2",
+   "text": "So go ahead and tweet it, make a TikTok, make it trend,",
+   "words": [
+    {
+     "w": "So",
+     "start": 84.42,
+     "end": 84.58,
+     "conf": 0.502
+    },
+    {
+     "w": "go",
+     "start": 84.62,
+     "end": 84.88,
+     "conf": 0.44
+    },
+    {
+     "w": "ahead",
+     "start": 84.9,
+     "end": 85.14,
+     "conf": 0.529
+    },
+    {
+     "w": "and",
+     "start": 85.18,
+     "end": 85.26,
+     "conf": 0.465
+    },
+    {
+     "w": "tweet",
+     "start": 85.28,
+     "end": 85.52,
+     "conf": 0.493
+    },
+    {
+     "w": "it,",
+     "start": 85.54,
+     "end": 85.66,
+     "conf": 0.235
+    },
+    {
+     "w": "make",
+     "start": 85.68,
+     "end": 85.84,
+     "conf": 0.478
+    },
+    {
+     "w": "a",
+     "start": 85.86,
+     "end": 85.92,
+     "conf": 0.037
+    },
+    {
+     "w": "TikTok,",
+     "start": 85.98,
+     "end": 86.36,
+     "conf": 0.45
+    },
+    {
+     "w": "make",
+     "start": 86.38,
+     "end": 86.5,
+     "conf": 0.492
+    },
+    {
+     "w": "it",
+     "start": 86.58,
+     "end": 86.64,
+     "conf": 0.507
+    },
+    {
+     "w": "trend,",
+     "start": 86.66,
+     "end": 87.1,
+     "conf": 0.646
+    }
+   ],
+   "start": 84.42,
+   "end": 87.1
+  },
+  {
+   "section": "pre2",
+   "text": "I'll be over here hand-typing like it's twenty-ten again,",
+   "words": [
+    {
+     "w": "I'll",
+     "start": 87.12,
+     "end": 87.23,
+     "conf": 0.053
+    },
+    {
+     "w": "be",
+     "start": 87.24,
+     "end": 87.48,
+     "conf": 0.238
+    },
+    {
+     "w": "over",
+     "start": 87.5,
+     "end": 87.72,
+     "conf": 0.709
+    },
+    {
+     "w": "here",
+     "start": 87.74,
+     "end": 87.9,
+     "conf": 0.279
+    },
+    {
+     "w": "hand-typing",
+     "start": 87.92,
+     "end": 88.44,
+     "conf": 0.54
+    },
+    {
+     "w": "like",
+     "start": 88.46,
+     "end": 88.58,
+     "conf": 0.492
+    },
+    {
+     "w": "it's",
+     "start": 88.64,
+     "end": 88.72,
+     "conf": 0.561
+    },
+    {
+     "w": "twenty-ten",
+     "start": 88.78,
+     "end": 89.38,
+     "conf": 0.533
+    },
+    {
+     "w": "again,",
+     "start": 89.4,
+     "end": 89.92,
+     "conf": 0.533
+    }
+   ],
+   "start": 87.12,
+   "end": 89.92
+  },
+  {
+   "section": "pre2",
+   "text": "It's slop, it's slop, it's a slop machine,",
+   "words": [
+    {
+     "w": "It's",
+     "start": 89.94,
+     "end": 90.08,
+     "conf": 0.408
+    },
+    {
+     "w": "slop,",
+     "start": 90.1,
+     "end": 90.44,
+     "conf": 0.538
+    },
+    {
+     "w": "it's",
+     "start": 90.66,
+     "end": 90.8,
+     "conf": 0.329
+    },
+    {
+     "w": "slop,",
+     "start": 90.82,
+     "end": 91.18,
+     "conf": 0.578
+    },
+    {
+     "w": "it's",
+     "start": 91.28,
+     "end": 91.42,
+     "conf": 0.473
+    },
+    {
+     "w": "a",
+     "start": 91.44,
+     "end": 91.5,
+     "conf": 0.491
+    },
+    {
+     "w": "slop",
+     "start": 91.52,
+     "end": 91.82,
+     "conf": 0.615
+    },
+    {
+     "w": "machine,",
+     "start": 91.9,
+     "end": 92.48,
+     "conf": 0.533
+    }
+   ],
+   "start": 89.94,
+   "end": 92.48
+  },
+  {
+   "section": "pre2",
+   "text": "Watch it try to do the simplest thing!",
+   "words": [
+    {
+     "w": "Watch",
+     "start": 92.6,
+     "end": 92.82,
+     "conf": 0.503
+    },
+    {
+     "w": "it",
+     "start": 92.84,
+     "end": 92.92,
+     "conf": 0.475
+    },
+    {
+     "w": "try",
+     "start": 92.94,
+     "end": 93.14,
+     "conf": 0.451
+    },
+    {
+     "w": "to",
+     "start": 93.16,
+     "end": 93.28,
+     "conf": 0.173
+    },
+    {
+     "w": "do",
+     "start": 93.3,
+     "end": 93.5,
+     "conf": 0.532
+    },
+    {
+     "w": "the",
+     "start": 93.52,
+     "end": 93.62,
+     "conf": 0.487
+    },
+    {
+     "w": "simplest",
+     "start": 93.64,
+     "end": 94.22,
+     "conf": 0.642
+    },
+    {
+     "w": "thing!",
+     "start": 94.34,
+     "end": 95.08,
+     "conf": 0.311
+    }
+   ],
+   "start": 92.6,
+   "end": 95.08
+  },
+  {
+   "section": "chorus2",
+   "text": "It can't count the R's in strawberry,",
+   "words": [
+    {
+     "w": "It",
+     "start": 95.1,
+     "end": 95.16,
+     "conf": 0.466
+    },
+    {
+     "w": "can't",
+     "start": 95.2,
+     "end": 95.38,
+     "conf": 0.574
+    },
+    {
+     "w": "count",
+     "start": 95.4,
+     "end": 95.56,
+     "conf": 0.597
+    },
+    {
+     "w": "the",
+     "start": 95.58,
+     "end": 95.88,
+     "conf": 0.522
+    },
+    {
+     "w": "R's",
+     "start": 95.9,
+     "end": 96.18,
+     "conf": 0.463
+    },
+    {
+     "w": "in",
+     "start": 96.2,
+     "end": 96.32,
+     "conf": 0.425
+    },
+    {
+     "w": "strawberry,",
+     "start": 96.34,
+     "end": 97.48,
+     "conf": 0.228
+    }
+   ],
+   "start": 95.1,
+   "end": 97.48
+  },
+  {
+   "section": "chorus2",
+   "text": "It can't fill a glass of wine,",
+   "words": [
+    {
+     "w": "It",
+     "start": 97.88,
+     "end": 97.94,
+     "conf": 0.398
+    },
+    {
+     "w": "can't",
+     "start": 97.98,
+     "end": 98.14,
+     "conf": 0.359
+    },
+    {
+     "w": "fill",
+     "start": 98.18,
+     "end": 98.4,
+     "conf": 0.484
+    },
+    {
+     "w": "a",
+     "start": 98.42,
+     "end": 98.5,
+     "conf": 0.376
+    },
+    {
+     "w": "glass",
+     "start": 98.52,
+     "end": 98.9,
+     "conf": 0.506
+    },
+    {
+     "w": "of",
+     "start": 98.92,
+     "end": 99.04,
+     "conf": 0.018
+    },
+    {
+     "w": "wine,",
+     "start": 99.06,
+     "end": 100.38,
+     "conf": 0.434
+    }
+   ],
+   "start": 97.88,
+   "end": 100.38
+  },
+  {
+   "section": "chorus2",
+   "text": "Every clock says ten past ten,",
+   "words": [
+    {
+     "w": "Every",
+     "start": 100.68,
+     "end": 100.88,
+     "conf": 0.538
+    },
+    {
+     "w": "clock",
+     "start": 100.94,
+     "end": 101.18,
+     "conf": 0.552
+    },
+    {
+     "w": "says",
+     "start": 101.28,
+     "end": 101.68,
+     "conf": 0.5
+    },
+    {
+     "w": "ten",
+     "start": 101.96,
+     "end": 102.28,
+     "conf": 0.648
+    },
+    {
+     "w": "past",
+     "start": 102.34,
+     "end": 102.64,
+     "conf": 0.51
+    },
+    {
+     "w": "ten,",
+     "start": 102.68,
+     "end": 103.08,
+     "conf": 0.551
+    }
+   ],
+   "start": 100.68,
+   "end": 103.08
+  },
+  {
+   "section": "chorus2",
+   "text": "So I've got plenty of time!",
+   "words": [
+    {
+     "w": "So",
+     "start": 103.2,
+     "end": 103.54,
+     "conf": 0.694
+    },
+    {
+     "w": "I've",
+     "start": 103.56,
+     "end": 103.68,
+     "conf": 0.314
+    },
+    {
+     "w": "got",
+     "start": 103.72,
+     "end": 103.96,
+     "conf": 0.563
+    },
+    {
+     "w": "plenty",
+     "start": 104.04,
+     "end": 104.86,
+     "conf": 0.331
+    },
+    {
+     "w": "of",
+     "start": 104.88,
+     "end": 105.28,
+     "conf": 0.002
+    },
+    {
+     "w": "time!",
+     "start": 105.3,
+     "end": 105.86,
+     "conf": 0.188
+    }
+   ],
+   "start": 103.2,
+   "end": 105.86
+  },
+  {
+   "section": "chorus2",
+   "text": "Six fingers waving hi at me,",
+   "words": [
+    {
+     "w": "Six",
+     "start": 105.88,
+     "end": 106.1,
+     "conf": 0.171
+    },
+    {
+     "w": "fingers",
+     "start": 106.16,
+     "end": 106.5,
+     "conf": 0.675
+    },
+    {
+     "w": "waving",
+     "start": 106.52,
+     "end": 106.88,
+     "conf": 0.384
+    },
+    {
+     "w": "hi",
+     "start": 106.9,
+     "end": 107.27,
+     "conf": 0.235
+    },
+    {
+     "w": "at",
+     "start": 107.28,
+     "end": 107.76,
+     "conf": 0.222
+    },
+    {
+     "w": "me,",
+     "start": 107.9,
+     "end": 108.42,
+     "conf": 0.249
+    }
+   ],
+   "start": 105.88,
+   "end": 108.42
+  },
+  {
+   "section": "chorus2",
+   "text": "Nah, I'm not losing sleep,",
+   "words": [
+    {
+     "w": "Nah,",
+     "start": 108.44,
+     "end": 109.06,
+     "conf": 0.252
+    },
+    {
+     "w": "I'm",
+     "start": 109.08,
+     "end": 109.3,
+     "conf": 0.49
+    },
+    {
+     "w": "not",
+     "start": 109.32,
+     "end": 109.64,
+     "conf": 0.499
+    },
+    {
+     "w": "losing",
+     "start": 109.66,
+     "end": 110.58,
+     "conf": 0.435
+    },
+    {
+     "w": "sleep,",
+     "start": 110.6,
+     "end": 111.54,
+     "conf": 0.657
+    }
+   ],
+   "start": 108.44,
+   "end": 111.54
+  },
+  {
+   "section": "chorus2",
+   "text": "It's a toy, it's a joke, it's a party trick,",
+   "words": [
+    {
+     "w": "It's",
+     "start": 111.96,
+     "end": 112.12,
+     "conf": 0.659
+    },
+    {
+     "w": "a",
+     "start": 112.14,
+     "end": 112.2,
+     "conf": 0.419
+    },
+    {
+     "w": "toy,",
+     "start": 112.22,
+     "end": 112.66,
+     "conf": 0.548
+    },
+    {
+     "w": "it's",
+     "start": 112.68,
+     "end": 112.82,
+     "conf": 0.532
+    },
+    {
+     "w": "a",
+     "start": 112.84,
+     "end": 112.9,
+     "conf": 0.435
+    },
+    {
+     "w": "joke,",
+     "start": 112.92,
+     "end": 113.34,
+     "conf": 0.607
+    },
+    {
+     "w": "it's",
+     "start": 113.36,
+     "end": 113.5,
+     "conf": 0.595
+    },
+    {
+     "w": "a",
+     "start": 113.52,
+     "end": 113.58,
+     "conf": 0.048
+    },
+    {
+     "w": "party",
+     "start": 113.64,
+     "end": 114.2,
+     "conf": 0.598
+    },
+    {
+     "w": "trick,",
+     "start": 114.26,
+     "end": 114.62,
+     "conf": 0.56
+    }
+   ],
+   "start": 111.96,
+   "end": 114.62
+  },
+  {
+   "section": "chorus2",
+   "text": "And my job is mine to keep!",
+   "words": [
+    {
+     "w": "And",
+     "start": 114.72,
+     "end": 114.84,
+     "conf": 0.59
+    },
+    {
+     "w": "my",
+     "start": 114.86,
+     "end": 115.06,
+     "conf": 0.506
+    },
+    {
+     "w": "job",
+     "start": 115.16,
+     "end": 115.9,
+     "conf": 0.475
+    },
+    {
+     "w": "is",
+     "start": 116.3,
+     "end": 116.58,
+     "conf": 0.608
+    },
+    {
+     "w": "mine",
+     "start": 116.6,
+     "end": 117.24,
+     "conf": 0.46
+    },
+    {
+     "w": "to",
+     "start": 117.26,
+     "end": 117.52,
+     "conf": 0.297
+    },
+    {
+     "w": "keep!",
+     "start": 117.56,
+     "end": 118.66,
+     "conf": 0.145
+    }
+   ],
+   "start": 114.72,
+   "end": 118.66
+  },
+  {
+   "section": "breakdown",
+   "text": "Monday morning, new ticket on the board,",
+   "words": [
+    {
+     "w": "Monday",
+     "start": 129.08,
+     "end": 129.78,
+     "conf": 0.699
+    },
+    {
+     "w": "morning,",
+     "start": 129.8,
+     "end": 130.12,
+     "conf": 0.771
+    },
+    {
+     "w": "new",
+     "start": 130.16,
+     "end": 130.42,
+     "conf": 0.609
+    },
+    {
+     "w": "ticket",
+     "start": 130.48,
+     "end": 130.9,
+     "conf": 0.752
+    },
+    {
+     "w": "on",
+     "start": 130.94,
+     "end": 131.0,
+     "conf": 0.663
+    },
+    {
+     "w": "the",
+     "start": 131.04,
+     "end": 131.16,
+     "conf": 0.717
+    },
+    {
+     "w": "board,",
+     "start": 131.2,
+     "end": 131.52,
+     "conf": 0.501
+    }
+   ],
+   "start": 129.08,
+   "end": 131.52
+  },
+  {
+   "section": "breakdown",
+   "text": "\"Two weeks,\" I estimated, \"maybe even more\",",
+   "words": [
+    {
+     "w": "Two",
+     "start": 131.56,
+     "end": 131.68,
+     "conf": 0.069
+    },
+    {
+     "w": "weeks,",
+     "start": 131.72,
+     "end": 132.16,
+     "conf": 0.458
+    },
+    {
+     "w": "I",
+     "start": 132.2,
+     "end": 132.28,
+     "conf": 0.469
+    },
+    {
+     "w": "estimated,",
+     "start": 132.32,
+     "end": 133.0,
+     "conf": 0.655
+    },
+    {
+     "w": "maybe",
+     "start": 133.26,
+     "end": 133.72,
+     "conf": 0.692
+    },
+    {
+     "w": "even",
+     "start": 133.74,
+     "end": 133.94,
+     "conf": 0.851
+    },
+    {
+     "w": "more\",",
+     "start": 133.98,
+     "end": 134.42,
+     "conf": 0.619
+    }
+   ],
+   "start": 131.56,
+   "end": 134.42
+  },
+  {
+   "section": "breakdown",
+   "text": "Typed it in the prompt box, just to watch it choke,",
+   "words": [
+    {
+     "w": "Typed",
+     "start": 134.48,
+     "end": 134.9,
+     "conf": 0.15
+    },
+    {
+     "w": "it",
+     "start": 134.94,
+     "end": 135.1,
+     "conf": 0.313
+    },
+    {
+     "w": "in",
+     "start": 135.12,
+     "end": 135.18,
+     "conf": 0.73
+    },
+    {
+     "w": "the",
+     "start": 135.2,
+     "end": 135.3,
+     "conf": 0.913
+    },
+    {
+     "w": "prompt",
+     "start": 135.34,
+     "end": 135.68,
+     "conf": 0.501
+    },
+    {
+     "w": "box,",
+     "start": 135.72,
+     "end": 136.02,
+     "conf": 0.561
+    },
+    {
+     "w": "just",
+     "start": 136.06,
+     "end": 136.2,
+     "conf": 0.626
+    },
+    {
+     "w": "to",
+     "start": 136.22,
+     "end": 136.38,
+     "conf": 0.686
+    },
+    {
+     "w": "watch",
+     "start": 136.4,
+     "end": 136.6,
+     "conf": 0.733
+    },
+    {
+     "w": "it",
+     "start": 136.64,
+     "end": 136.7,
+     "conf": 0.464
+    },
+    {
+     "w": "choke,",
+     "start": 136.72,
+     "end": 137.02,
+     "conf": 0.322
+    }
+   ],
+   "start": 134.48,
+   "end": 137.02
+  },
+  {
+   "section": "breakdown",
+   "text": "Came back from my coffee to a masterstroke...",
+   "words": [
+    {
+     "w": "Came",
+     "start": 137.08,
+     "end": 137.4,
+     "conf": 0.702
+    },
+    {
+     "w": "back",
+     "start": 137.44,
+     "end": 137.66,
+     "conf": 0.613
+    },
+    {
+     "w": "from",
+     "start": 137.76,
+     "end": 137.94,
+     "conf": 0.512
+    },
+    {
+     "w": "my",
+     "start": 137.98,
+     "end": 138.1,
+     "conf": 0.705
+    },
+    {
+     "w": "coffee",
+     "start": 138.14,
+     "end": 138.46,
+     "conf": 0.46
+    },
+    {
+     "w": "to",
+     "start": 138.5,
+     "end": 138.72,
+     "conf": 0.706
+    },
+    {
+     "w": "a",
+     "start": 138.76,
+     "end": 138.84,
+     "conf": 0.455
+    },
+    {
+     "w": "masterstroke...",
+     "start": 138.86,
+     "end": 140.04,
+     "conf": 0.593
+    }
+   ],
+   "start": 137.08,
+   "end": 140.04
+  },
+  {
+   "section": "breakdown",
+   "text": "Oh... duck!",
+   "words": [
+    {
+     "w": "Oh...",
+     "start": 140.5,
+     "end": 140.74,
+     "conf": 0.249
+    },
+    {
+     "w": "duck!",
+     "start": 140.96,
+     "end": 141.24,
+     "conf": 0.511
+    }
+   ],
+   "start": 140.5,
+   "end": 141.24
+  },
+  {
+   "section": "bridge",
+   "text": "And lately... something's weird.",
+   "words": [
+    {
+     "w": "And",
+     "start": 142.72,
+     "end": 142.84,
+     "conf": 0.722
+    },
+    {
+     "w": "lately...",
+     "start": 142.88,
+     "end": 143.38,
+     "conf": 0.666
+    },
+    {
+     "w": "something's",
+     "start": 143.76,
+     "end": 144.28,
+     "conf": 0.739
+    },
+    {
+     "w": "weird.",
+     "start": 144.32,
+     "end": 144.74,
+     "conf": 0.5
+    }
+   ],
+   "start": 142.72,
+   "end": 144.74
+  },
+  {
+   "section": "bridge",
+   "text": "Grandma's out of keys,",
+   "words": [
+    {
+     "w": "Grandma's",
+     "start": 145.88,
+     "end": 146.62,
+     "conf": 0.629
+    },
+    {
+     "w": "out",
+     "start": 146.76,
+     "end": 146.9,
+     "conf": 0.499
+    },
+    {
+     "w": "of",
+     "start": 146.94,
+     "end": 147.0,
+     "conf": 0.191
+    },
+    {
+     "w": "keys,",
+     "start": 147.08,
+     "end": 147.7,
+     "conf": 0.473
+    }
+   ],
+   "start": 145.88,
+   "end": 147.7
+  },
+  {
+   "section": "bridge",
+   "text": "My Tesla's driving me, hands-free,",
+   "words": [
+    {
+     "w": "My",
+     "start": 148.4,
+     "end": 148.66,
+     "conf": 0.5
+    },
+    {
+     "w": "Tesla's",
+     "start": 148.72,
+     "end": 149.36,
+     "conf": 0.473
+    },
+    {
+     "w": "driving",
+     "start": 149.42,
+     "end": 150.0,
+     "conf": 0.585
+    },
+    {
+     "w": "me,",
+     "start": 150.02,
+     "end": 150.3,
+     "conf": 0.746
+    },
+    {
+     "w": "hands-free,",
+     "start": 150.34,
+     "end": 151.22,
+     "conf": 0.645
+    }
+   ],
+   "start": 148.4,
+   "end": 151.22
+  },
+  {
+   "section": "bridge",
+   "text": "The wine is dripping down on me...",
+   "words": [
+    {
+     "w": "The",
+     "start": 151.24,
+     "end": 151.38,
+     "conf": 0.626
+    },
+    {
+     "w": "wine",
+     "start": 151.4,
+     "end": 152.02,
+     "conf": 0.623
+    },
+    {
+     "w": "is",
+     "start": 152.06,
+     "end": 152.22,
+     "conf": 0.663
+    },
+    {
+     "w": "dripping",
+     "start": 152.24,
+     "end": 152.96,
+     "conf": 0.672
+    },
+    {
+     "w": "down",
+     "start": 153.0,
+     "end": 153.5,
+     "conf": 0.624
+    },
+    {
+     "w": "on",
+     "start": 153.52,
+     "end": 153.66,
+     "conf": 0.499
+    },
+    {
+     "w": "me...",
+     "start": 153.7,
+     "end": 154.18,
+     "conf": 0.749
+    }
+   ],
+   "start": 151.24,
+   "end": 154.18
+  },
+  {
+   "section": "bridge",
+   "text": "Will Smith eats spaghetti, smooth and slow,",
+   "words": [
+    {
+     "w": "Will",
+     "start": 154.74,
+     "end": 154.94,
+     "conf": 0.677
+    },
+    {
+     "w": "Smith",
+     "start": 155.02,
+     "end": 155.36,
+     "conf": 0.699
+    },
+    {
+     "w": "eats",
+     "start": 155.88,
+     "end": 156.08,
+     "conf": 0.594
+    },
+    {
+     "w": "spaghetti,",
+     "start": 156.1,
+     "end": 157.06,
+     "conf": 0.465
+    },
+    {
+     "w": "smooth",
+     "start": 157.1,
+     "end": 157.6,
+     "conf": 0.779
+    },
+    {
+     "w": "and",
+     "start": 157.64,
+     "end": 157.78,
+     "conf": 0.543
+    },
+    {
+     "w": "slow,",
+     "start": 157.8,
+     "end": 158.64,
+     "conf": 0.622
+    }
+   ],
+   "start": 154.74,
+   "end": 158.64
+  },
+  {
+   "section": "bridge",
+   "text": "And I can't tell it's fake...",
+   "words": [
+    {
+     "w": "And",
+     "start": 159.94,
+     "end": 160.1,
+     "conf": 0.614
+    },
+    {
+     "w": "I",
+     "start": 160.12,
+     "end": 160.18,
+     "conf": 0.499
+    },
+    {
+     "w": "can't",
+     "start": 160.22,
+     "end": 160.58,
+     "conf": 0.674
+    },
+    {
+     "w": "tell",
+     "start": 161.02,
+     "end": 161.4,
+     "conf": 0.494
+    },
+    {
+     "w": "it's",
+     "start": 161.72,
+     "end": 161.96,
+     "conf": 0.479
+    },
+    {
+     "w": "fake...",
+     "start": 162.08,
+     "end": 162.46,
+     "conf": 0.614
+    }
+   ],
+   "start": 159.94,
+   "end": 162.46
+  },
+  {
+   "section": "bridge",
+   "text": "...Oh no.",
+   "words": [
+    {
+     "w": "Oh",
+     "start": 164.04,
+     "end": 164.16,
+     "conf": 0.571
+    },
+    {
+     "w": "no.",
+     "start": 164.2,
+     "end": 164.34,
+     "conf": 0.468
+    }
+   ],
+   "start": 164.04,
+   "end": 164.34
+  },
+  {
+   "section": "final",
+   "text": "Now it always finds the missing R,",
+   "words": [
+    {
+     "w": "Now",
+     "start": 165.62,
+     "end": 165.88,
+     "conf": 0.708
+    },
+    {
+     "w": "it",
+     "start": 165.9,
+     "end": 166.0,
+     "conf": 0.499
+    },
+    {
+     "w": "always",
+     "start": 166.04,
+     "end": 166.26,
+     "conf": 0.8
+    },
+    {
+     "w": "finds",
+     "start": 166.3,
+     "end": 166.64,
+     "conf": 0.747
+    },
+    {
+     "w": "the",
+     "start": 166.68,
+     "end": 166.92,
+     "conf": 0.391
+    },
+    {
+     "w": "missing",
+     "start": 166.94,
+     "end": 167.94,
+     "conf": 0.481
+    },
+    {
+     "w": "R,",
+     "start": 167.96,
+     "end": 168.12,
+     "conf": 0.328
+    }
+   ],
+   "start": 165.62,
+   "end": 168.12
+  },
+  {
+   "section": "final",
+   "text": "Now the wine drips down my spine,",
+   "words": [
+    {
+     "w": "Now",
+     "start": 168.42,
+     "end": 168.56,
+     "conf": 0.604
+    },
+    {
+     "w": "the",
+     "start": 168.6,
+     "end": 168.72,
+     "conf": 0.506
+    },
+    {
+     "w": "wine",
+     "start": 168.76,
+     "end": 169.04,
+     "conf": 0.666
+    },
+    {
+     "w": "drips",
+     "start": 169.06,
+     "end": 169.5,
+     "conf": 0.625
+    },
+    {
+     "w": "down",
+     "start": 169.62,
+     "end": 169.98,
+     "conf": 0.558
+    },
+    {
+     "w": "my",
+     "start": 170.0,
+     "end": 170.18,
+     "conf": 0.503
+    },
+    {
+     "w": "spine,",
+     "start": 170.24,
+     "end": 171.28,
+     "conf": 0.416
+    }
+   ],
+   "start": 168.42,
+   "end": 171.28
+  },
+  {
+   "section": "final",
+   "text": "Every clock is ticking fine,",
+   "words": [
+    {
+     "w": "Every",
+     "start": 171.32,
+     "end": 171.5,
+     "conf": 0.572
+    },
+    {
+     "w": "clock",
+     "start": 171.54,
+     "end": 171.84,
+     "conf": 0.689
+    },
+    {
+     "w": "is",
+     "start": 172.12,
+     "end": 172.32,
+     "conf": 0.408
+    },
+    {
+     "w": "ticking",
+     "start": 172.58,
+     "end": 173.06,
+     "conf": 0.725
+    },
+    {
+     "w": "fine,",
+     "start": 173.12,
+     "end": 173.94,
+     "conf": 0.328
+    }
+   ],
+   "start": 171.32,
+   "end": 173.94
+  },
+  {
+   "section": "final",
+   "text": "Counting down to my deadline!",
+   "words": [
+    {
+     "w": "Counting",
+     "start": 173.98,
+     "end": 174.64,
+     "conf": 0.376
+    },
+    {
+     "w": "down",
+     "start": 174.66,
+     "end": 175.0,
+     "conf": 0.317
+    },
+    {
+     "w": "to",
+     "start": 175.04,
+     "end": 175.22,
+     "conf": 0.541
+    },
+    {
+     "w": "my",
+     "start": 175.24,
+     "end": 175.5,
+     "conf": 0.328
+    },
+    {
+     "w": "deadline!",
+     "start": 175.54,
+     "end": 176.4,
+     "conf": 0.172
+    }
+   ],
+   "start": 173.98,
+   "end": 176.4
+  },
+  {
+   "section": "final",
+   "text": "Five fingers waving bye to me,",
+   "words": [
+    {
+     "w": "Five",
+     "start": 176.42,
+     "end": 176.75,
+     "conf": 0.145
+    },
+    {
+     "w": "fingers",
+     "start": 176.76,
+     "end": 177.1,
+     "conf": 0.271
+    },
+    {
+     "w": "waving",
+     "start": 177.14,
+     "end": 177.44,
+     "conf": 0.204
+    },
+    {
+     "w": "bye",
+     "start": 177.48,
+     "end": 178.04,
+     "conf": 0.239
+    },
+    {
+     "w": "to",
+     "start": 178.06,
+     "end": 178.5,
+     "conf": 0.215
+    },
+    {
+     "w": "me,",
+     "start": 178.52,
+     "end": 179.06,
+     "conf": 0.377
+    }
+   ],
+   "start": 176.42,
+   "end": 179.06
+  },
+  {
+   "section": "final",
+   "text": "Now my job's not mine to keep...",
+   "words": [
+    {
+     "w": "Now",
+     "start": 179.1,
+     "end": 179.34,
+     "conf": 0.366
+    },
+    {
+     "w": "my",
+     "start": 179.38,
+     "end": 179.52,
+     "conf": 0.431
+    },
+    {
+     "w": "job's",
+     "start": 179.56,
+     "end": 179.94,
+     "conf": 0.25
+    },
+    {
+     "w": "not",
+     "start": 179.96,
+     "end": 180.14,
+     "conf": 0.479
+    },
+    {
+     "w": "mine",
+     "start": 180.26,
+     "end": 180.88,
+     "conf": 0.431
+    },
+    {
+     "w": "to",
+     "start": 180.94,
+     "end": 181.22,
+     "conf": 0.46
+    },
+    {
+     "w": "keep...",
+     "start": 181.28,
+     "end": 182.16,
+     "conf": 0.149
+    }
+   ],
+   "start": 179.1,
+   "end": 182.16
+  },
+  {
+   "section": "final",
+   "text": "Fine! I'll be a plumber, gonna fix your sink,",
+   "words": [
+    {
+     "w": "Fine!",
+     "start": 182.2,
+     "end": 182.56,
+     "conf": 0.544
+    },
+    {
+     "w": "I'll",
+     "start": 182.6,
+     "end": 182.72,
+     "conf": 0.121
+    },
+    {
+     "w": "be",
+     "start": 182.76,
+     "end": 182.92,
+     "conf": 0.258
+    },
+    {
+     "w": "a",
+     "start": 182.94,
+     "end": 183.04,
+     "conf": 0.141
+    },
+    {
+     "w": "plumber,",
+     "start": 183.06,
+     "end": 183.46,
+     "conf": 0.554
+    },
+    {
+     "w": "gonna",
+     "start": 183.76,
+     "end": 184.12,
+     "conf": 0.428
+    },
+    {
+     "w": "fix",
+     "start": 184.42,
+     "end": 184.64,
+     "conf": 0.66
+    },
+    {
+     "w": "your",
+     "start": 184.66,
+     "end": 184.88,
+     "conf": 0.692
+    },
+    {
+     "w": "sink,",
+     "start": 184.92,
+     "end": 185.22,
+     "conf": 0.532
+    }
+   ],
+   "start": 182.2,
+   "end": 185.22
+  },
+  {
+   "section": "final",
+   "text": "AI can't hold a wrench, no matter what you think!",
+   "words": [
+    {
+     "w": "AI",
+     "start": 185.24,
+     "end": 185.96,
+     "conf": 0.166
+    },
+    {
+     "w": "can't",
+     "start": 186.0,
+     "end": 186.2,
+     "conf": 0.571
+    },
+    {
+     "w": "hold",
+     "start": 186.22,
+     "end": 186.42,
+     "conf": 0.548
+    },
+    {
+     "w": "a",
+     "start": 186.44,
+     "end": 186.5,
+     "conf": 0.247
+    },
+    {
+     "w": "wrench,",
+     "start": 186.54,
+     "end": 186.74,
+     "conf": 0.26
+    },
+    {
+     "w": "no",
+     "start": 186.76,
+     "end": 186.84,
+     "conf": 0.219
+    },
+    {
+     "w": "matter",
+     "start": 186.88,
+     "end": 187.22,
+     "conf": 0.21
+    },
+    {
+     "w": "what",
+     "start": 187.26,
+     "end": 187.48,
+     "conf": 0.593
+    },
+    {
+     "w": "you",
+     "start": 187.6,
+     "end": 187.8,
+     "conf": 0.734
+    },
+    {
+     "w": "think!",
+     "start": 187.9,
+     "end": 191.62,
+     "conf": 0.543
+    }
+   ],
+   "start": 185.24,
+   "end": 191.62
+  },
+  {
+   "section": "robot",
+   "text": "\"You're absolutely right.\"",
+   "words": [
+    {
+     "w": "You're",
+     "start": 194.54,
+     "end": 194.78,
+     "conf": 0.533
+    },
+    {
+     "w": "absolutely",
+     "start": 194.82,
+     "end": 195.38,
+     "conf": 0.728
+    },
+    {
+     "w": "right.",
+     "start": 195.4,
+     "end": 195.6,
+     "conf": 0.501
+    }
+   ],
+   "start": 194.54,
+   "end": 195.6
+  },
+  {
+   "section": "robot",
+   "text": "\"Move aside, human. I have a task to complete.\"",
+   "words": [
+    {
+     "w": "Move",
+     "start": 197.0,
+     "end": 197.22,
+     "conf": 0.741
+    },
+    {
+     "w": "aside,",
+     "start": 197.24,
+     "end": 197.64,
+     "conf": 0.596
+    },
+    {
+     "w": "human.",
+     "start": 198.4,
+     "end": 198.84,
+     "conf": 0.696
+    },
+    {
+     "w": "I",
+     "start": 198.86,
+     "end": 198.94,
+     "conf": 0.498
+    },
+    {
+     "w": "have",
+     "start": 198.96,
+     "end": 199.14,
+     "conf": 0.744
+    },
+    {
+     "w": "a",
+     "start": 199.16,
+     "end": 199.21,
+     "conf": 0.496
+    },
+    {
+     "w": "task",
+     "start": 199.22,
+     "end": 199.62,
+     "conf": 0.605
+    },
+    {
+     "w": "to",
+     "start": 199.72,
+     "end": 199.8,
+     "conf": 0.991
+    },
+    {
+     "w": "complete.",
+     "start": 199.84,
+     "end": 200.24,
+     "conf": 0.562
+    }
+   ],
+   "start": 197.0,
+   "end": 200.24
+  }
+ ],
+ "events": [
+  {
+   "name": "laugh",
+   "start": 3.4,
+   "end": 5.8
+  }
+ ],
+ "sections": [
+  {
+   "name": "intro",
+   "start": 0.72,
+   "end": 7.9
+  },
+  {
+   "name": "verse1",
+   "start": 9.08,
+   "end": 31.42
+  },
+  {
+   "name": "pre1",
+   "start": 31.6,
+   "end": 42.26
+  },
+  {
+   "name": "chorus1",
+   "start": 42.28,
+   "end": 65.1
+  },
+  {
+   "name": "verse2",
+   "start": 67.16,
+   "end": 84.4
+  },
+  {
+   "name": "pre2",
+   "start": 84.42,
+   "end": 95.08
+  },
+  {
+   "name": "chorus2",
+   "start": 95.1,
+   "end": 118.66
+  },
+  {
+   "name": "solo",
+   "start": 118.66,
+   "end": 129.08
+  },
+  {
+   "name": "breakdown",
+   "start": 129.08,
+   "end": 141.24
+  },
+  {
+   "name": "bridge",
+   "start": 142.72,
+   "end": 164.34
+  },
+  {
+   "name": "final",
+   "start": 165.62,
+   "end": 191.62
+  },
+  {
+   "name": "robot",
+   "start": 194.54,
+   "end": 200.24
+  }
+ ]
+}

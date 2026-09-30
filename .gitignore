@@ -1,0 +1,22 @@
+.DS_Store
+node_modules/
+.vite/
+storybook-static/
+
+# the original mp3 is kept in the repo as video/audio/song.original.mp3
+/Your job is safe.mp3
+
+# analysis: Python env, model weights, stems, intermediates (all regenerable, several GB)
+video/analysis/.venv/
+video/analysis/.cache/
+video/analysis/__pycache__/
+video/analysis/stems/
+video/analysis/work/
+
+# renders: final videos, clips, WIP and QA frames (regenerable with the scripts in video/app/scripts)
+out/*
+!out/VIDEO-CONTENTS.md
+!out/styles/
+out/styles/*
+!out/styles/NOTES.md
+!out/styles/contact-sheet.png
