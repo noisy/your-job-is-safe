@@ -150,11 +150,14 @@ export default class Robot extends Ps1Stage {
   private creditTimes() {
     const au = this.ctx.audio, end = this.d[this.d.length - 1]!;
     const dbs = au.downbeats.filter((y) => y >= this.d[7]! - 0.02);
-    const at = (i: number) => dbs[i] ?? this.cardStart() + 1.39 * i;
+    // the tracked beats sit at the hits' onset peaks; the attack you hear starts ~55 ms earlier, so everything
+    // leads by LEAD (the attack plus a frame); the springing slams start SLAM earlier still, to land on the hit
+    const LEAD = 0.08, SLAM = 0.1;
+    const at = (i: number) => (dbs[i] ?? this.cardStart() + 1.39 * i) - LEAD;
     const lines = CREDITS.map((_, i) => at(i));
-    const done = Math.min(at(CREDITS.length), end - 3.2);
-    const title = Math.min(at(CREDITS.length + 1), end - 2.0);
-    const star = Math.min(au.timeOfBeat(au.beatAt(title) + 3), end - 0.8);
+    const done = Math.min(at(CREDITS.length), end - 3.2) - SLAM;
+    const title = Math.min(at(CREDITS.length + 1), end - 2.0) - SLAM;
+    const star = Math.min(au.timeOfBeat(au.beatAt(title + SLAM + LEAD) + 3) - LEAD, end - 0.8) - SLAM;
     return { lines, done, title, star };
   }
 
