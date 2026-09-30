@@ -88,8 +88,8 @@ export default class EndScreen extends Ps1Stage {
       const m = this.quad(tex.tex, x0, y0, x1, y1);
       m.userData.rect = [x0, y0, x1, y1];
       this.frames.push(m);
-      const lt = canvasTex(128, 20, () => {});
-      const lm = this.quad(lt.tex, (tl.x0 + tl.x1) / 2 - 320, 735, (tl.x0 + tl.x1) / 2 + 320, 835);
+      const lt = canvasTex(144, 20, () => {});
+      const lm = this.quad(lt.tex, (tl.x0 + tl.x1) / 2 - 360, 735, (tl.x0 + tl.x1) / 2 + 360, 835);
       this.labels.push({ mesh: lm, tex: lt, key: '' });
     });
     // DEV (overalls, sulking) and the v6.0 robot plumber, small in the bottom corners
@@ -180,21 +180,23 @@ export default class EndScreen extends Ps1Stage {
       l.visible = u > 0.55 + i * 0.025;
       l.position.y = lerp(2.5, 0, clamp(s, 0, 1.3)) + 0.06 * Math.sin(u * 2.4 - i * 0.45);
     });
-    // P(BLOOM) ▶ / P(DOOM) ▶: the cursor hops between them (the viewer has to pick)
+    // the choice: P(BLOOM) + P(DOOM) = 1, so the cursor sets one to 1 (lit, ▶) and the other to 0 (dim)
     const sel = Math.floor(Math.max(0, u - 1) / 1.4) % 2;
     this.labels.forEach((lb, i) => {
       const on = u > 0.7 + 0.08 * i;
       lb.mesh.visible = on;
-      const cur = sel === i && Math.floor(u * 4) % 2 === 0;
+      const chosen = sel === i;
+      const cur = chosen && Math.floor(u * 4) % 2 === 0;
       const key = `${cur}|${sel}`;
       if (key === lb.key) return;
       lb.key = key;
       const c = lb.tex.ctx;
-      c.clearRect(0, 0, 128, 20);
-      const s = i === 0 ? 'P(BLOOM)' : 'P(DOOM)';
-      const col = i === 0 ? P.fix : P.fail;
-      pixText(c, s, 64 - textW(`${s} ▶`, 2) / 2, 3, sel === i ? col : P.uiLine, 2, { shadow: P.uiEdge });
-      if (cur || sel !== i) pixText(c, '▶', 64 + textW(`${s} ▶`, 2) / 2 - 10, 3, sel === i ? col : P.uiDim, 2, { shadow: P.uiEdge });
+      c.clearRect(0, 0, 144, 20);
+      const s = `${i === 0 ? 'P(BLOOM)' : 'P(DOOM)'}=${chosen ? 1 : 0}`;
+      const col = chosen ? (i === 0 ? P.fix : P.fail) : P.uiDim;
+      const x0 = 72 - textW(`${s} ▶`, 2) / 2;
+      pixText(c, s, x0, 3, col, 2, { shadow: P.uiEdge });
+      if (cur) pixText(c, '▶', x0 + textW(`${s} `, 2), 3, col, 2, { shadow: P.uiEdge });
       lb.tex.tex.needsUpdate = true;
     });
 

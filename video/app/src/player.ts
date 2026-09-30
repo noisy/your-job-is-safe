@@ -55,11 +55,24 @@ export function mountPlayer(root: HTMLElement, engine: Engine, audioUrl: string,
   let playing = false;
   let lastAudioT = -1, lastPerf = 0;
   let alive = true;
-  const seek = (x: number) => { t = Math.max(range[0], Math.min(range[1] - 0.001, x)); audio.currentTime = t; lastAudioT = -1; };
+  // Past the end of the mp3 (the silent end card and end screen) the clock is performance.now(): `silent` holds
+  // where that clock started (song time, wall time), or null while the audio drives time.
+  let silent: { t: number; perf: number } | null = null;
+  const audioEnd = () => (Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : Infinity);
+  const startAudio = () => {
+    if (t < audioEnd() - 0.02) { silent = null; audio.currentTime = t; void audio.play(); }
+    else { audio.pause(); silent = { t, perf: performance.now() }; }
+  };
+  const seek = (x: number) => {
+    t = Math.max(range[0], Math.min(range[1] - 0.001, x));
+    audio.currentTime = Math.min(t, audioEnd());
+    lastAudioT = -1;
+    if (playing) startAudio(); else silent = null;
+  };
   const toggle = () => {
     playing = !playing;
     playBtn.textContent = playing ? 'pause' : 'play';
-    if (playing) { audio.currentTime = t; void audio.play(); } else audio.pause();
+    if (playing) startAudio(); else { audio.pause(); silent = null; }
   };
   seek(t);
   engine.canvas.onclick = toggle;
@@ -100,11 +113,15 @@ export function mountPlayer(root: HTMLElement, engine: Engine, audioUrl: string,
     if (playing) {
       // smooth the coarse audio clock with performance.now()
       const now = performance.now();
-      if (audio.currentTime !== lastAudioT) { lastAudioT = audio.currentTime; lastPerf = now; }
-      t = lastAudioT + (audio.paused ? 0 : (now - lastPerf) / 1000);
+      if (!silent && (audio.ended || t >= audioEnd() - 0.02)) silent = { t: Math.max(t, Math.min(audioEnd(), range[1])), perf: now };
+      if (silent) t = silent.t + (now - silent.perf) / 1000;
+      else {
+        if (audio.currentTime !== lastAudioT) { lastAudioT = audio.currentTime; lastPerf = now; }
+        t = lastAudioT + (audio.paused ? 0 : (now - lastPerf) / 1000);
+      }
       if (t >= range[1]) {
         if (o.loop ?? true) seek(range[0]);
-        else { playing = false; audio.pause(); playBtn.textContent = 'play'; }
+        else { playing = false; audio.pause(); silent = null; playBtn.textContent = 'play'; }
       }
     }
     engine.render(t, 1 / 60);
