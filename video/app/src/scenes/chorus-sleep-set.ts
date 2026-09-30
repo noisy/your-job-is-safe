@@ -8,7 +8,14 @@ import { P } from '../ps1/palette';
 
 const box = (w: number, h: number, d: number, m: THREE.Material | THREE.Material[]) => new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m);
 
-export function makeBed() {
+/** Mattress top height (the bed stands on y = 0). */
+export const MATTRESS_TOP = 0.56;
+
+/**
+ * The bed. The quilt is thin: `over` drapes it over someone lying on his back (a thin top at `overTop`, sides and
+ * a foot panel down to the mattress, touching it); `flat` lays it flat on the mattress (things can stand on it).
+ */
+export function makeBed(quiltMode: 'over' | 'flat' = 'flat', overTop = 0.93) {
   const root = new THREE.Group();
   const wood = psMat({ color: '#5A3620' }), sheet = psMat({ color: '#E3DCCB' });
   const R = rng(3);
@@ -20,7 +27,22 @@ export function makeBed() {
   const foot = box(1.3, 0.55, 0.1, wood); foot.position.set(0, 0.28, 1.05);
   const mattress = box(1.1, 0.18, 2.0, sheet); mattress.position.y = 0.47;
   const pillow = box(0.7, 0.12, 0.35, sheet); pillow.position.set(0, 0.62, -0.78);
-  const blanket = box(1.16, 0.2, 1.3, quilt); blanket.position.set(0, 0.64, 0.32);
+  const blanket = new THREE.Group(); blanket.position.set(0, 0, 0.32);
+  const T = 0.025, W = 1.16, L = 1.3;
+  if (quiltMode === 'flat') {
+    const q = box(W, T, L, quilt); q.position.y = MATTRESS_TOP + T / 2; blanket.add(q);
+  } else {
+    const top = box(W - 0.3, T, L, quilt); top.position.y = overTop; blanket.add(top);
+    const sideH = overTop - MATTRESS_TOP;
+    for (const sx of [-1, 1]) {
+      // the quilt falls from the body's sides to the mattress edge, slanting out
+      const side = box(T, Math.hypot(sideH, 0.15), L, quilt);
+      side.position.set(sx * (W / 2 - 0.075), MATTRESS_TOP + sideH / 2, 0);
+      side.rotation.z = sx * Math.atan2(0.15, sideH);
+      blanket.add(side);
+    }
+    const end = box(W - 0.3, sideH, T, quilt); end.position.set(0, MATTRESS_TOP + sideH / 2, L / 2); blanket.add(end);
+  }
   root.add(frame, head, foot, mattress, pillow, blanket);
   return { root, blanket };
 }

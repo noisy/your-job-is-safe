@@ -33,7 +33,7 @@ const DX = 30; // the dream set's offset along x
 const PLQ: V3 = [-0.92, 1.0, -2.86]; // the plaque's centre on the desk
 const PLQ_TX = 0.0068; // world units per plaque texel
 const PLQ_TILT = -0.35;
-const BOXP: V3 = [-2.8, 0.56, -2.3]; // the cardboard box, on the foot of the bed (final)
+const BOXP: V3 = [-2.8, 0.585, -2.3]; // the cardboard box, on the foot of the bed, standing on the flat quilt (final)
 const BOX_W = 0.95, BOX_H = 0.5, BOX_D = 0.62;
 const CH_TX = 0.068; // dream letters
 const BLK = 0.24, BLK_PITCH = 0.27, SPACE = 0.2;
@@ -101,12 +101,13 @@ export default class ChorusSleep extends Ps1Stage {
     const ceil = new THREE.Mesh(new THREE.PlaneGeometry(10.2, 8), psMat({ color: '#2A1E16' }));
     ceil.rotation.x = Math.PI / 2; ceil.position.set(0, 5, -0.2); this.world.add(ceil);
     this.drawScreen('sleep');
-    const bed = makeBed(); bed.root.position.set(...BED); bed.blanket.position.y = 0.8; this.world.add(bed.root);
+    // DEV's front is at ~0.89 lying on his back: the quilt drapes just over it; the final chorus has it flat (the box stands on it)
+    const bed = fin ? makeBed('flat') : makeBed('over', 0.92); bed.root.position.set(...BED); this.world.add(bed.root);
     // DEV asleep (pyjamas), on his back, head on the pillow
     this.dev = makeDev(); this.dev.outfit('pyjamas'); this.dev.setFace('sleep');
     this.dev.root.rotation.x = Math.PI / 2;
     this.devG.add(this.dev.root); this.devG.rotation.y = Math.PI;
-    this.devG.position.set(BED[0], 0.74, HEAD[2] + 1.4);
+    this.devG.position.set(BED[0], 0.72, HEAD[2] + 1.4); // (his back on the mattress, 0.56)
     this.dev.armL.rotation.x = this.dev.armR.rotation.x = 0.1;
     this.world.add(this.devG);
     this.devG.visible = !fin;
