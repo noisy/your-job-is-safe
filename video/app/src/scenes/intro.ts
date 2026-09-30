@@ -1,5 +1,5 @@
 // #1 intro [0 → cut("I write my code")], the spoken intro (no music until audio.musicStart).
-//   Frame 0: the game's title screen (YOUR JOB IS SAFE! in block letters, a spinning thumbs-up, a
+//   Frame 0: the game's title screen (YOUR JOB IS SAFE! in block letters, a spinning rubber duck, a
 //   CERTIFIED SAFE seal, PRESS START, ©1999 DEV SOFT).
 //   "AI will replace all programmers by next year.": the title flips away into a newsflash montage; three
 //   front pages spin in, each carrying a real, paraphrased quote, and the spoken words are slammed onto
@@ -13,10 +13,10 @@ import type { Frame } from '../engine/scene';
 import type { Line } from '../engine/lyrics';
 import { clamp, ease, lerp, hash, springStep } from '../engine/util';
 import { Ps1Stage, type CamState, type V3 } from '../ps1/stage';
-import { makeDev, makeRoom, type Dev, type Room } from '../ps1/cast';
+import { makeDev, makeRoom, makeDuck, type Dev, type Room } from '../ps1/cast';
 import { pixText, textW, psMat, canvasTex, rng } from '../ps1/gfx';
 import { P } from '../ps1/palette';
-import { introQuotes, drawFrontPage, drawLeaf, makeThumbsUp, makeSunburst, PAGE_TW, PAGE_TH } from './intro-props';
+import { introQuotes, drawFrontPage, drawLeaf, makeSunburst, PAGE_TW, PAGE_TH } from './intro-props';
 
 const TITLE_X = 100; // the title screen set
 const NEWS_X = 200; // the newsflash set
@@ -80,7 +80,9 @@ export default class Intro extends Ps1Stage {
     a.root.position.set(X, 1.05, 0); b.root.position.set(X, -0.2, 0);
     a.root.scale.setScalar(0.95); b.root.scale.setScalar(0.95);
     this.title = { a, b };
-    this.thumb = makeThumbsUp(); this.thumb.position.set(X - 3.2, 0.35, 0.4); this.world.add(this.thumb);
+    // DEV's rubber duck, big, spinning on the title screen (it pays off in the breakdown: "Oh... duck!")
+    this.thumb = new THREE.Group(); const duck = makeDuck(); duck.scale.setScalar(4.2); duck.position.y = -0.35; this.thumb.add(duck);
+    this.thumb.position.set(X - 3.5, 0.35, 0.4); this.world.add(this.thumb); // (smaller, out by the left edge, clear of the title)
     // the seal: CERTIFIED / ✓ / SAFE on a green rosette
     const sealT = canvasTex(64, 64, (c) => {
       c.fillStyle = P.fixSide; c.beginPath(); c.arc(32, 32, 31, 0, Math.PI * 2); c.fill();

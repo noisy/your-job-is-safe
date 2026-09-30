@@ -72,14 +72,20 @@ export function drawLeaf(c: CanvasRenderingContext2D, year: number, word: string
 /** DEV's thumbs-up (skin fist, thumb, hoodie cuff), ~1 unit tall, centred on its origin. */
 export function makeThumbsUp() {
   const g = new THREE.Group();
-  const skin = psMat({ color: P.skin }), knuckle = psMat({ color: shade(P.skin, 0.85) }), cloth = psMat({ color: P.hoodie });
+  const skin = psMat({ color: P.skin }), skinAlt = psMat({ color: shade(P.skin, 0.94) }), knuckle = psMat({ color: shade(P.skin, 0.8) }), cloth = psMat({ color: P.hoodie });
   const b = (w: number, h: number, d: number, m: THREE.Material, x: number, y: number, z: number) => {
     const mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); mesh.position.set(x, y, z); g.add(mesh); return mesh;
   };
-  b(0.52, 0.46, 0.44, skin, 0, 0, 0);
-  for (let i = 0; i < 4; i++) b(0.1, 0.11, 0.1, knuckle, 0.2, 0.15 - i * 0.11, 0.2);
-  b(0.17, 0.4, 0.17, skin, -0.12, 0.4, 0.04);
-  b(0.12, 0.08, 0.12, knuckle, -0.12, 0.62, 0.04);
+  // the fist: four curled fingers as stacked rolls across the whole front (so it reads as a fist, not a finger)
+  b(0.5, 0.48, 0.4, skin, 0, 0, 0);
+  for (let i = 0; i < 4; i++) {
+    b(0.52, 0.1, 0.14, i % 2 ? skin : skinAlt, 0.02, 0.18 - i * 0.12, 0.2);
+    b(0.5, 0.015, 0.02, knuckle, 0.02, 0.125 - i * 0.12, 0.275); // the crease between two fingers
+  }
+  // the thumb: thick, up from the fist's back edge, leaning out a little, with a nail
+  const th = new THREE.Group(); th.position.set(-0.16, 0.22, -0.06); th.rotation.z = 0.18; g.add(th);
+  const tb = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.36, 0.2), skin); tb.position.y = 0.18; th.add(tb);
+  const nail = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.1, 0.03), psMat({ color: '#F2D4BC' })); nail.position.set(0, 0.3, 0.1); th.add(nail);
   b(0.58, 0.26, 0.5, cloth, 0, -0.34, 0);
   g.scale.setScalar(1.15);
   return g;
