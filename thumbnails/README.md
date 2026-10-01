@@ -28,7 +28,7 @@ promising the low-poly video you get after the click.
 
 | | thumbnail | idea |
 |---|---|---|
-| **a** | <img src="thumbnail-abtest-batch-2-a.png" width="320" alt="CODER | PLUMBER"> | CODER / PLUMBER: a split, low-poly DEV at his laptop in a café and the chatbot in plumber's overalls with a wrench in a boiler room |
+| **a** | <img src="thumbnail-abtest-batch-2-a.png" width="320" alt="CODER vs PLUMBER"> | CODER / PLUMBER: a split, low-poly DEV at his laptop in a café and the chatbot in plumber's overalls with a wrench in a boiler room |
 | **b** | <img src="thumbnail-abtest-batch-2-b.png" width="320" alt="REPLACED?"> | REPLACED?: low-poly DEV, coffee in hand, staring across the desk at the chatbot typing at the other monitor |
 | **c** | <img src="thumbnail-abtest-batch-2-c.png" width="320" alt="NOT EVEN PLUMBING?!"> | NOT EVEN PLUMBING?!: the creator himself, photoreal, under a kitchen sink in overalls, while the low-poly robot plumber gives him a thumbs-up (generated with Nano Banana Pro from a portrait reference) |
 
