@@ -4,6 +4,8 @@
 
 **Watch it on YouTube: https://youtu.be/6t2PD-we2G8**
 
+🎵 **The song:** [`audio/your-job-is-safe.mp3`](audio/your-job-is-safe.mp3) (3:33, with the cover and the lyrics in its tags)
+
 A satirical pop-punk song for programmers. "AI will replace all programmers by next year." They said that last year
 too. So DEV, a smug senior developer in a green hoodie, laughs at every AI fail: the chatbot that can't count the R's
 in "strawberry", the wine glass that never fills to the brim, every clock stuck at 10:10, six fingers, 260 McNuggets,
@@ -43,7 +45,8 @@ in conversation with Claude.
 
 - `handoff.md` — the song: concept, the irony and how it works, full lyrics, and every reference case by case with
   sources; `prompt.md` — the brief the video was built from.
-- `video/audio/song.mp3` — the song (Suno), with the guitar outro; `song.original.mp3` — the 3:24 cut without it.
+- `audio/your-job-is-safe.mp3` — the song (Suno), with the guitar outro; `your-job-is-safe-original-3m24.mp3` — the
+  3:24 cut without it. (`video/audio/song.mp3` and `song.original.mp3` are symlinks to them, for the renderer.)
 - `video/lyrics/lyrics.src.txt` — the lyrics as sung, by section (the aligner's input).
 - `video/data/lyrics.json` — word-level lyric timings; `video/data/audio.json` — tempo (~172 BPM), beats, downbeats,
   sections, kick/snare/hat hits and loudness envelopes of the stems.

@@ -3,7 +3,7 @@ node_modules/
 .vite/
 storybook-static/
 
-# the original mp3 is kept in the repo as video/audio/song.original.mp3
+# the original mp3 is kept in the repo as audio/your-job-is-safe-original-3m24.mp3
 /Your job is safe.mp3
 
 # analysis: Python env, model weights, stems, intermediates (all regenerable, several GB)

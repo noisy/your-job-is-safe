@@ -3,6 +3,8 @@ import { cpSync } from 'node:fs';
 import path from 'node:path';
 
 const repoRoot = path.resolve(import.meta.dirname, '..');
+// video/audio/*.mp3 are symlinks to the song in the repo's top-level audio/ (where viewers look for it)
+const projectRoot = path.resolve(repoRoot, '..');
 const assetDirs = ['audio', 'data'];
 
 // Git can check out directory symlinks as plain files on Windows. Serve the
@@ -21,7 +23,7 @@ function repoAssets(): Plugin {
     writeBundle(options) {
       if (!options.dir) return;
       for (const dir of assetDirs) {
-        cpSync(path.join(repoRoot, dir), path.join(options.dir, dir), { recursive: true });
+        cpSync(path.join(repoRoot, dir), path.join(options.dir, dir), { recursive: true, dereference: true });
       }
     },
   };
@@ -32,7 +34,7 @@ export default defineConfig({
   publicDir: 'public',
   plugins: [repoAssets()],
   // YJIS_NO_HMR=1: no live reload (export renders must not reload mid-run when a file changes)
-  server: { port: 5173, strictPort: false, hmr: process.env.YJIS_NO_HMR ? false : undefined, fs: { allow: [repoRoot] } },
+  server: { port: 5173, strictPort: false, hmr: process.env.YJIS_NO_HMR ? false : undefined, fs: { allow: [repoRoot, projectRoot] } },
   resolve: { alias: { '@root': repoRoot } },
   build: { target: 'esnext', assetsInlineLimit: 0 },
 });
